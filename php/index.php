@@ -67,7 +67,7 @@ session_start();
                         <ul class="nav navbar-nav pull-right">
                             <!-- start language menu -->
                             <li>
-                                <a href="makeapayment.html">Make a Payment</a>
+                                <a href="../php/makeapayment.php">Make a Payment</a>
                             </li>
                             <!-- end language menu -->
                             <!-- start manage user dropdown -->
@@ -246,12 +246,9 @@ session_start();
                                                     <thead>
                                                         <tr>
                                                             <th>No</th>
-                                                            <th>Name</th>
-                                                            <th>Assigned Doctor</th>
-                                                            <th>Date Of Admit</th>
-                                                            <th>Diseases</th>
-                                                            <th>Room No</th>
-                                                            <th>Edit</th>
+                                                            <th>Amount</th>
+                                                            <th>Date</th>
+                                                            
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -260,7 +257,8 @@ session_start();
                                                         $link=mysqli_connect("localhost","root","") or die('CONNECTION ERROR');
                                                         mysqli_select_db($link,"vcare") or die('DATABSE NOT SELECTED');
                                                         $username=$_SESSION['username'];
-                                                        $query=mysqli_query($link,"SELECT * FROM donation WHERE username=$username ") or die('No search executed');
+
+                                                        $query=mysqli_query($link,"SELECT * FROM donation WHERE name='$username' ") or die('No search executed');
                                                         $count=mysqli_num_rows($query);
                                                         if($count==0)
                                                         {
