@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<?php
-session_start();
-?>
 <html lang="en">
+    <?php
+    session_start();
+    ?>
 
     <!-- Mirrored from radixtouch.in/hospital/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Sep 2017 15:31:09 GMT -->
+
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,11 +15,12 @@ session_start();
         <title>Redstar Hospital | Bootstrap Responsive Hospital Admin Template</title>
 
         <!-- google font -->
-        <link href="../../fonts.googleapis.com/cssbc32.css?family=Open+Sans:400,300,600,700&amp;subset=all" rel="stylesheet" type="text/css" />
+        <link href="../../fonts.googleapis.com/cssbc32.css?family=Open+Sans:400,300,600,700&amp;subset=all" rel="stylesheet" type="text/css"
+              />
 
         <!-- icons -->
         <link href="js/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
-        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
         <!--bootstrap -->
         <link href="js/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -30,9 +32,19 @@ session_start();
         <link href="css/style.css" rel="stylesheet" type="text/css" />
         <link href="css/responsive.css" rel="stylesheet" type="text/css" />
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+        <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
+        <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+
+        <link rel="stylesheet" href="css/style1.css">
+
+
+
         <!-- favicon -->
-        <link rel="shortcut icon" href="img/favicon.ico" /> 
+        <link rel="shortcut icon" href="img/favicon.ico" />
     </head>
+
     <body class="page-header-fixed sidemenu-closed-hidelogo page-container-bg-solid page-content-white page-md">
         <div class="page-wrapper">
             <!-- start header -->
@@ -67,14 +79,14 @@ session_start();
                         <ul class="nav navbar-nav pull-right">
                             <!-- start language menu -->
                             <li>
-                                <a href="makeapayment.php">Make a Payment</a>
+                                <a href="makeapayment.html">Make a Payment</a>
                             </li>
                             <!-- end language menu -->
                             <!-- start manage user dropdown -->
                             <li class="dropdown dropdown-user">
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                                     <img alt="" class="img-circle " src="img/dp.svg" />
-                                    
+                                    <span class="username username-hide-on-mobile"> Kiran </span>
                                     <i class="fa fa-angle-down"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-default">
@@ -129,9 +141,7 @@ session_start();
                                             <img src="img/dp.svg" class="img-circle user-img-circle" alt="User Image" />
                                         </div>
                                         <div class="pull-left info">
-                                            <?php
-                                            echo '$_SESSION["name"]' 
-                                            ?>
+                                            <p>Kiran Patel</p>
                                         </div>
                                     </div>
                                 </li>
@@ -213,158 +223,129 @@ session_start();
                         </div>
                     </div>
                 </div>
-                <!-- end sidebar menu --> 
+                <!-- end sidebar menu -->
                 <!-- start page content -->
-                <div class="page-content-wrapper">
-                    <div class="page-content">
+                <div class="page-content-wrapper" style="width: 200%">
+                    <div class="page-content" style="width: 1100px">
                         <div class="page-bar">
                             <div class="page-title-breadcrumb">
                                 <div class=" pull-left">
                                     <div class="page-title">Dashboard</div>
                                 </div>
                                 <ol class="breadcrumb page-breadcrumb pull-right">
-                                    <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="index-2.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+                                    <li>
+                                        <i class="fa fa-home"></i>&nbsp;
+                                        <a class="parent-item" href="index-2.html">Home</a>&nbsp;
+                                        <i class="fa fa-angle-right"></i>
                                     </li>
                                     <li class="active">Dashboard</li>
                                 </ol>
                             </div>
                         </div>
                         <!-- start admited patient list -->
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12">
-                                <div class="card  card-topline-yellow">
-                                    <div class="card-head">
-                                        <header>YOUR DONATION HISTORY</header>
-                                        <div class="tools">
-                                            <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
-                                            <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
-                                            <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+
+                        <div class="container">
+                            <div class="row">
+                                <!-- You can make it whatever width you want. I'm making it full width
+on <= small devices and 4/12 page width on >= medium devices -->
+                                <div class="col-xs-12 col-md-4">
+
+
+                                    <!-- CREDIT CARD FORM STARTS HERE -->
+                                    <div class="panel panel-default credit-card-box">
+                                        <div class="panel-heading display-table">
+                                            <div class="row display-tr">
+                                                <h3 class="panel-title display-td">Payment Details</h3>
+                                                <div class="display-td">
+                                                    <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel-body">
+                                            <form role="form" id="payment-form">
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <div class="form-group">
+                                                            <label for="cardNumber">CARD NUMBER</label>
+                                                            <div class="input-group">
+                                                                <input type="tel" class="form-control" name="cardNumber" placeholder="Valid Card Number" autocomplete="cc-number"  required
+                                                                       autofocus />
+                                                                <span class="input-group-addon">
+                                                                    <i class="fa fa-credit-card"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-7 col-md-7">
+                                                        <div class="form-group">
+                                                            <label for="cardExpiry">
+                                                                <span class="hidden-xs">EXPIRATION</span>
+                                                                <span class="visible-xs-inline">EXP</span> DATE</label>
+                                                            <input type="tel" class="form-control" name="cardExpiry" placeholder="MM / YY" autocomplete="cc-exp" required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-5 col-md-5 pull-right">
+                                                        <div class="form-group">
+                                                            <label for="cardCVC">CV CODE</label>
+                                                            <input type="tel" class="form-control" name="cardCVC" placeholder="CVC" autocomplete="cc-csc" required />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <div class="form-group">
+                                                            <label for="couponCode">AMOUNT</label>
+                                                            <input type="text" class="form-control" name="amount" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <button class="btn btn-success btn-lg btn-block" type="submit" name="SUBMIT">Start Subscription</button>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="display:none;">
+                                                    <div class="col-xs-12">
+                                                        <p class="payment-errors"></p>
+                                                    </div>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
-                                    <div class="card-body ">
-                                        <div class="table-wrap">
-                                            <div class="table-responsive">
-                                                <table class="table display product-overview mb-30" id="support_table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>No</th>
-                                                            <th>Amount</th>
-                                                            <th>Date</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <?php
-                                                    $link=mysqli_connect("localhost","root","") or die('CONNECTION ERROR');
-                                                    mysqli_select_db($link,"vcare") or die('DATABSE NOT SELECTED');
-                                            $username=$_SESSION['username'];
-                                            $query=mysqli_query($link,"SELECT * FROM donation WHERE username=$username ") or die('No search executed');
-                                                    $count=mysqli_num_rows($query);
-                                                    if($count==0)
-                                                    {
-                                                        echo "<p>YOU HAVEN'T MADE ANY DONATIONS RECENTLY!</p>";
-                                                    }
-                                                    else{
-                                                        $count=0;
-                                                        while($row=mysqli_fetch_array($query))
-                                                        {
-                                                        $count=$count+1;
-                                                        
-                                                       
-                                                        $showamount=$row[1];
-                                                        $showdate=$row[2];
-                                                        
-                                                            echo "<tr><td>$count</td>
-                                                           
-                                                             <td><b>$showamount</b></td>
-                                                             <td><b>$showdate</b></td></tr>"
-                                                        }
+                                    <!-- CREDIT CARD FORM ENDS HERE -->
 
-                                                        ?>
-                                                        
-                        <!-- end admited patient list -->
-                    
-              
-                <!-- end page content -->
-                <!-- start chat sidebar -->
-                
-                            <!-- End Doctor Chat --> 
-                            <!-- Start Setting Panel --> 
-                            <div class="tab-pane chat-sidebar-settings" id="quick_sidebar_tab_3">
-                                <div class="chat-sidebar-settings-list">
-                                    <h3 class="list-heading">Layout Settings</h3>
-                                    <div class="chatpane inner-content ">
-                                        <ul class="list-items borderless theme-options">
-                                            <li class="theme-option layout-setting"><span>Sidebar
-                                                Position </span>
-                                                <select class="sidebar-pos-option form-control input-inline input-sm input-small ">
-                                                    <option value="left" selected="selected">Left</option>
-                                                    <option value="right">Right</option>
-                                                </select>
-                                            </li>
-                                            <li class="theme-option layout-setting"><span>Header</span>
-                                                <select class="page-header-option form-control input-inline input-sm input-small ">
-                                                    <option value="fixed" selected="selected">Fixed</option>
-                                                    <option value="default">Default</option>
-                                                </select>
-                                            </li>
-                                            <li class="theme-option layout-setting"><span>Sidebar Menu </span>
-                                                <select class="sidebar-menu-option form-control input-inline input-sm input-small ">
-                                                    <option value="accordion" selected="selected">Accordion</option>
-                                                    <option value="hover">Hover</option>
-                                                </select>
-                                            </li>
-                                            <li class="theme-option layout-setting"><span>Footer</span>
-                                                <select class="page-footer-option form-control input-inline input-sm input-small ">
-                                                    <option value="fixed">Fixed</option>
-                                                    <option value="default" selected="selected">Default</option>
-                                                </select>
-                                            </li>
-                                        </ul>
-                                        <h3 class="list-heading">Account Settings</h3>
-                                        <ul class="list-items borderless theme-options">
-                                            <li>Show me Online
-                                                <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="success" data-on-text="ON" data-off-color="default" data-off-text="OFF">
-                                            </li>
-                                            <li>Status visible to all
-                                                <input type="checkbox" class="make-switch" data-size="small" data-on-color="info" data-on-text="ON" data-off-color="default" data-off-text="OFF">
-                                            </li>
-                                            <li>Everyone will see my stuff
-                                                <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="danger" data-on-text="ON" data-off-color="default" data-off-text="OFF">
-                                            </li>
-                                            <li>Auto Sumbit Issues
-                                                <input type="checkbox" class="make-switch" data-size="small" data-on-color="warning" data-on-text="ON" data-off-color="default" data-off-text="OFF">
-                                            </li>
-                                            <li>Save History
-                                                <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="success" data-on-text="ON" data-off-color="default" data-off-text="OFF">
-                                            </li>
-                                        </ul>
-                                        <h3 class="list-heading">General Settings</h3>
-                                        <ul class="list-items borderless">
-                                            <li>Enable Notifications
-                                                <input type="checkbox" class="make-switch" data-size="small" data-on-color="info" data-on-text="ON" data-off-color="default" data-off-text="OFF">
-                                            </li>
-                                            <li>Enable SMS Alerts
-                                                <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="danger" data-on-text="ON" data-off-color="default" data-off-text="OFF">
-                                            </li>
-                                            <li>Location
-                                                <input type="checkbox" class="make-switch" data-size="small" data-on-color="warning" data-on-text="ON" data-off-color="default" data-off-text="OFF">
-                                            </li>
-                                            <li>Show Offline Users
-                                                <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="success" data-on-text="ON" data-off-color="default" data-off-text="OFF">
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    
+                                    <?php
+                                    $link=mysqli_connect("localhost","root","") or die('CONNECTION ERROR');
+                                    mysqli_select_db($link,"vcare") or die('DATABSE NOT SELECTED');
+                                    $user=$_SESSION['username'];
+                                    $amount=$_POST['amount'];
+                                    $date=date();
+                                    $query=mysqli_query($link,"INSERT INTO donations VALUES('$user',' $amount','' )") or die('No search executed');
+                                    header("Location: index.php");
+                                    ?>
                                 </div>
+
+
+
                             </div>
                         </div>
 
+                        <!-- end admited patient list -->
                     </div>
                 </div>
+                <!-- end page content -->
+                <!-- start chat sidebar -->
+
                 <!-- end chat sidebar -->
             </div>
             <!-- end page container -->
             <!-- start footer -->
-            <div class="page-footer">
+            <div class="page-footer" style="
+                                            width: 1400px;
+                                            ">
                 <div class="page-footer-inner"> 2017 &copy; RedStar Hospital Theme By
                     <a href="mailto:rtthememaker@gmail.com" target="_top">RT Theme maker</a>
                 </div>
@@ -386,9 +367,20 @@ session_start();
         <script src="js/chart-js/Chart.bundle.js" type="text/javascript"></script>
         <script src="js/chart-js/utils.js" type="text/javascript"></script>
         <script src="js/chart-js/home-data.js" type="text/javascript"></script>
+        <!-- If you're using Stripe for payments -->
+        <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js'></script>
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery.payment/1.2.3/jquery.payment.min.js'></script>
+        <script src="js/index.js"></script>
+
+    </body>
+
+
+
 
 
     </body>
 
-    <!-- Mirrored from radixtouch.in/hospital/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Sep 2017 15:31:50 GMT -->
+<!-- Mirrored from radixtouch.in/hospital/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Sep 2017 15:31:50 GMT -->
+
 </html>
