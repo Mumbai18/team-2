@@ -15,10 +15,12 @@ if(isset($_POST['btn_login']))
     if($row['password'] == $password && $row['uname'] == $user_name)
     {
         //Admin Login
-        $_SESSION['user'] = $row['uname'];
+        $_SESSION['username'] = $row['username'];
+        $_SESSION['name'] = $row['name'];
         header("Location: donor_dashboard.php");
 
     }
+    
 
 }
 if(isset($_POST['btn_register']))
@@ -33,6 +35,8 @@ if(isset($_POST['btn_register']))
     if(!$query){echo mysqli_error($link);}
     else 
     {
+        $_SESSION['username'] = $row['username'];
+        $_SESSION['name'] = $row['name'];
 ?>
 <script>alert("Successfully Registered");
     window.location.href='login.php';</script>

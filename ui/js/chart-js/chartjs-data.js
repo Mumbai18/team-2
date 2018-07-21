@@ -1,15 +1,18 @@
 
-$(document).ready(function() {
-	var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+$(document).ready(function () {
+    var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October"];
     var config = {
         type: 'line',
         data: {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October"],
             datasets: [{
-                label: "New Patients",
+                label: "Finance",
                 backgroundColor: window.chartColors.red,
                 borderColor: window.chartColors.red,
                 data: [
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
                     randomScalingFactor(),
                     randomScalingFactor(),
                     randomScalingFactor(),
@@ -20,7 +23,7 @@ $(document).ready(function() {
                 ],
                 fill: false,
             }, {
-                label: "Old Patients",
+                label: "Nutritional Support",
                 fill: false,
                 backgroundColor: window.chartColors.blue,
                 borderColor: window.chartColors.blue,
@@ -31,15 +34,36 @@ $(document).ready(function() {
                     randomScalingFactor(),
                     randomScalingFactor(),
                     randomScalingFactor(),
-                    randomScalingFactor()
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                ],
+            },
+            {
+                label: "Childcare Support",
+                fill: false,
+                backgroundColor: window.chartColors.yellow,
+                borderColor: window.chartColors.yellow,
+                data: [
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
                 ],
             }]
         },
         options: {
             responsive: true,
-            title:{
-                display:true,
-                text:'HOSPITAL SURVEY'
+            title: {
+                display: true,
+                text: 'Registered Patients Last 10 months trend according to the different programs'
             },
             tooltips: {
                 mode: 'index',
@@ -69,108 +93,108 @@ $(document).ready(function() {
     };
     var ctx = document.getElementById("chartjs_line").getContext("2d");
     window.myLine = new Chart(ctx, config);
-	});
-        
-      
-$(document).ready(function() {
-	var randomScalingFactor = function() {
+});
+
+
+$(document).ready(function () {
+    var randomScalingFactor = function () {
         return Math.round(Math.random() * 100);
     };
 
     var config = {
         type: 'pie',
-    data: {
+        data: {
+            datasets: [{
+                data: [
+                    45,
+                    67,
+                    89,
+                    90,
+                    123,
+                ],
+                backgroundColor: [
+                    window.chartColors.red,
+                    window.chartColors.orange,
+                    window.chartColors.yellow,
+                    window.chartColors.green,
+                    window.chartColors.blue,
+                ],
+                label: 'Regions'
+            }],
+            labels: [
+                "Mumbai",
+                "Pune",
+                "Bangalore",
+                "Delhi",
+                "Chennai"
+            ]
+        },
+        options: {
+            responsive: true
+        }
+    };
+
+    var ctx = document.getElementById("chartjs_pie").getContext("2d");
+    window.myPie = new Chart(ctx, config);
+});
+
+$(document).ready(function () {
+    var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var color = Chart.helpers.color;
+    var barChartData = {
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
         datasets: [{
+            label: 'New Patients',
+            backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
+            borderColor: window.chartColors.red,
+            borderWidth: 1,
             data: [
                 randomScalingFactor(),
                 randomScalingFactor(),
                 randomScalingFactor(),
                 randomScalingFactor(),
                 randomScalingFactor(),
-            ],
-            backgroundColor: [
-                window.chartColors.red,
-                window.chartColors.orange,
-                window.chartColors.yellow,
-                window.chartColors.green,
-                window.chartColors.blue,
-            ],
-            label: 'Dataset 1'
-        }],
-        labels: [
-            "Red",
-            "Orange",
-            "Yellow",
-            "Green",
-            "Blue"
-        ]
-    },
-    options: {
-        responsive: true
-    }
-};
+                randomScalingFactor(),
+                randomScalingFactor()
+            ]
+        }, {
+            label: 'Old Patients',
+            backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
+            borderColor: window.chartColors.blue,
+            borderWidth: 1,
+            data: [
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor()
+            ]
+        }]
 
-    var ctx = document.getElementById("chartjs_pie").getContext("2d");
-    window.myPie = new Chart(ctx, config);
-}); 
+    };
 
-$(document).ready(function() {
-	 var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-     var color = Chart.helpers.color;
-     var barChartData = {
-         labels: ["January", "February", "March", "April", "May", "June", "July"],
-         datasets: [{
-             label: 'New Patients',
-             backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
-             borderColor: window.chartColors.red,
-             borderWidth: 1,
-             data: [
-                 randomScalingFactor(),
-                 randomScalingFactor(),
-                 randomScalingFactor(),
-                 randomScalingFactor(),
-                 randomScalingFactor(),
-                 randomScalingFactor(),
-                 randomScalingFactor()
-             ]
-         }, {
-             label: 'Old Patients',
-             backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
-             borderColor: window.chartColors.blue,
-             borderWidth: 1,
-             data: [
-                 randomScalingFactor(),
-                 randomScalingFactor(),
-                 randomScalingFactor(),
-                 randomScalingFactor(),
-                 randomScalingFactor(),
-                 randomScalingFactor(),
-                 randomScalingFactor()
-             ]
-         }]
+    var ctx = document.getElementById("chartjs_bar").getContext("2d");
+    window.myBar = new Chart(ctx, {
+        type: 'bar',
+        data: barChartData,
+        options: {
+            responsive: true,
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'Bar Chart'
+            }
+        }
+    });
 
-     };
+});
 
-         var ctx = document.getElementById("chartjs_bar").getContext("2d");
-         window.myBar = new Chart(ctx, {
-             type: 'bar',
-             data: barChartData,
-             options: {
-                 responsive: true,
-                 legend: {
-                     position: 'top',
-                 },
-                 title: {
-                     display: true,
-                     text: 'Bar Chart'
-                 }
-             }
-         });
-
-	});
-
-$(document).ready(function() {
-	var randomScalingFactor = function() {
+$(document).ready(function () {
+    var randomScalingFactor = function () {
         return Math.round(Math.random() * 100);
     };
 
@@ -213,10 +237,10 @@ $(document).ready(function() {
                 text: 'Polar Area Chart'
             },
             scale: {
-              ticks: {
-                beginAtZero: true
-              },
-              reverse: false
+                ticks: {
+                    beginAtZero: true
+                },
+                reverse: false
             },
             animation: {
                 animateRotate: false,
@@ -225,13 +249,13 @@ $(document).ready(function() {
         }
     };
 
-        var ctx = document.getElementById("chartjs_polar");
-        window.myPolarArea = Chart.PolarArea(ctx, config);
+    var ctx = document.getElementById("chartjs_polar");
+    window.myPolarArea = Chart.PolarArea(ctx, config);
 
-	});
+});
 
-$(document).ready(function() {
-	var randomScalingFactor = function() {
+$(document).ready(function () {
+    var randomScalingFactor = function () {
         return Math.round(Math.random() * 100);
     };
 
@@ -256,7 +280,7 @@ $(document).ready(function() {
                 label: 'Dataset 1'
             }],
             labels: [
-                "Red",
+                "Mumbai",
                 "Orange",
                 "Yellow",
                 "Green",
@@ -279,13 +303,13 @@ $(document).ready(function() {
         }
     };
 
-        var ctx = document.getElementById("chartjs_doughnut").getContext("2d");
-        window.myDoughnut = new Chart(ctx, config);
-    
-	});
+    var ctx = document.getElementById("chartjs_doughnut").getContext("2d");
+    window.myDoughnut = new Chart(ctx, config);
 
-$(document).ready(function() {
-	var randomScalingFactor = function() {
+});
+
+$(document).ready(function () {
+    var randomScalingFactor = function () {
         return Math.round(Math.random() * 100);
     };
 
@@ -333,15 +357,15 @@ $(document).ready(function() {
                 text: 'Radar Chart'
             },
             scale: {
-              ticks: {
-                beginAtZero: true
-              }
+                ticks: {
+                    beginAtZero: true
+                }
             }
         }
     };
 
-        window.myRadar = new Chart(document.getElementById("radar_chart"), config);
+    window.myRadar = new Chart(document.getElementById("radar_chart"), config);
 
-   
-	});
+
+});
 
