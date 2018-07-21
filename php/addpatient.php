@@ -8,6 +8,9 @@ if(isset($_POST['btn_login']))
     $type=$_POST['type'];
     $support=$_POST['support'];
     $query=mysqli_query($link,"INSERT INTO patient VALUES ('','$name','$fileno','$hospital','$gender','$type')");
+    $id = mysqli_query($link,"SELECT id FROM patient where name='$name'");
+    $query=mysqli_query($link,"INSERT INTO programme VALUES ('','$id','$type')");
+    
     echo "<h1>New Patient Added</h1>"
         header("Location: patientlist.php");
     
