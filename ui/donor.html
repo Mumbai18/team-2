@@ -40,7 +40,7 @@
         </div>
         <div class="form formLogin">
             <h2>Log In</h2>
-            <form action="../php/donor.php" method="post">
+            <form action="../../php/donor.php" method="post">
                 <input type="text" placeholder="Username" name="username" />
                 <input type="password" placeholder="Password" name="password" />
                 <button name="btn_login">Login</button>
@@ -48,23 +48,15 @@
         </div>
         <div class="form formRegister">
             <h2>Create an account</h2>
-<<<<<<< HEAD
+
             <form action="../php/donor.php" method="post">
-                <input type="text" placeholder="Username" name="username2" />
-                <input type="text" placeholder="PAN No" name="pan" />
-                <input type="text" placeholder="Address"  name="address"/>
-                <input type="password" placeholder="Password" name="password2" />
-                <input type="email" placeholder="Email Address" name="email"/>
-                <input type="text" placeholder="Full Name" name="name"/>
-=======
-            <form action="donor.php" method="post">
                 <input type="text" placeholder="Username" name="username2" oninput="unValnameate()" required />
                 <input type="text" placeholder="PAN No" name="pan" oninput="pan()" required />
                 <input type="text" placeholder="Address"  name="address" required/>
                 <input type="password" placeholder="Password" name="password2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>
                 <input type="email" placeholder="Email Address" name="email" oninput="emailValnameate()"/>
                 <input type="text" placeholder="Full Name" name="fname" placeholder="Enter Full Name" oninput="fnValnameate()" required/>
->>>>>>> c22dd2d84cb566b64a9a4cf65a1fbec1154af6b8
+
                 <input type="tel" placeholder="Phone Number" name="phno"/>
                 <button name="btn_register">Register</button>
             </form>

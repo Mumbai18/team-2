@@ -15,7 +15,6 @@ if(isset($_POST['btn_login']))
     {
         //Admin Login
           $_SESSION['name'] = $row['name'];
-          $_SESSION['username'] = $row['username'];
             header("Location: donor_dashboard.php");
  
     }
@@ -30,9 +29,9 @@ if(isset($_POST['btn_register']))
     $address= $_POST['address'];
     $password2= $_POST['password2'];
     $email= $_POST['email'];
-    $name=$_POST['name'];
+    $name=$_POST['fname'];
     $phno=$_POST['phno'];
-    $query=mysqli_query($link,"INSERT INTO donor VALUES ('',$name,$user_name,$password2,$email,$phno)");
+    $query=mysqli_query($link,"INSERT INTO donor VALUES ('','$name','$user_name','$password2','$email','$address','$phno','$pan')");
     if(!$query){echo mysqli_error($link);}
 	else 
 	{
@@ -42,7 +41,6 @@ if(isset($_POST['btn_register']))
         <?php
 	}
     $_SESSION["name"] = "name";
-    $_SESSION['username'] = $row['username'];
 }
 
 
