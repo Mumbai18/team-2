@@ -29,8 +29,7 @@ if(isset($_POST['btn_register']))
     $email= $_POST['email'];
     $name=$_POST['name'];
     $phno=$_POST['phno'];
-    $type='donor';
-    $query=mysqli_query($link,"INSERT INTO user values ('',$name,$user_name,$password2,$email,$phno,$type)");
+    $query=mysqli_query($link,"INSERT INTO user values ('',$name,$user_name,$password2,$email,$phno)");
     
     
 }
