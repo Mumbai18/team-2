@@ -112,7 +112,7 @@ session_start();
                 </div>
             </div>
             <!-- end header -->
-            <div class="clearfix"> </div>
+            
             <!-- start page container -->
             <div class="page-container">
                 <!-- start sidebar menu -->
@@ -215,6 +215,7 @@ session_start();
                         </div>
                     </div>
                 </div>
+            </div>
                 <!-- end sidebar menu --> 
                 <!-- start page content -->
                 <div class="page-content-wrapper">
@@ -237,6 +238,7 @@ session_start();
                                 <div class="card  card-topline-yellow">
                                     <div class="card-head">
                                         <header>YOUR DONATION HISTORY</header>
+                                    </div>
                                         <div class="tools">
                                             <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
                                             <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
@@ -278,11 +280,16 @@ session_start();
                                                             echo "<tr><td>$count</td>
                                                            
                                                              <td><b>$showamount</b></td>
-                                                             <td><b>$showdate</b></td></tr>"
+                                                             <td><b>$showdate</b></td></tr>";
                                                         }
 
                                                         ?>
-                                                        
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>          
                         <!-- end admited patient list -->
                     
               
@@ -358,12 +365,11 @@ session_start();
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                    </div>
-                </div>
+                        
+                    
+                
                 <!-- end chat sidebar -->
-            </div>
+            
             <!-- end page container -->
             <!-- start footer -->
             <div class="page-footer">
@@ -375,7 +381,7 @@ session_start();
                 </div>
             </div>
             <!-- end footer -->
-        </div>
+        
         <script src="js/jquery.min.js" type="text/javascript"></script>
         <script src="js/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="js/jquery.blockui.min.js" type="text/javascript"></script>
