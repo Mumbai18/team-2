@@ -11,12 +11,12 @@ if(isset($_POST['btn_login']))
     $res=mysqli_query($link,"SELECT * FROM donor WHERE username='$user_name' and password='$password'");
     $row=mysqli_fetch_array($res);
     //Valid username and password
-    if($row['password'] == $password && $row['uname'] == $user_name)
+    if($row['password'] == $password && $row['username'] == $user_name)
     {
         //Admin Login
           $_SESSION['username'] = $row['username'];
             $_SESSION['name'] = $row['name'];
-            header("Location: donor_dashboard.php");
+            header("Location: index.php");
  
     }
     
@@ -41,7 +41,7 @@ if(isset($_POST['btn_register']))
         $_SESSION['name'] = $row['name'];
 		?>
         <script>alert("Successfully Registered");
-        window.location.href='login.php';</script>
+            window.location.href='index.php';</script>
         <?php
        
 	}
