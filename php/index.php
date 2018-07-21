@@ -271,17 +271,13 @@ session_start();
                                                             while($row=mysqli_fetch_array($query))
                                                             {
                                                                 $count=$count+1;
-
-
                                                                 $showamount=$row[1];
                                                                 $showdate=$row[2];
-
                                                                 echo "<tr><td>$count</td>
-
                                                     <td><b>$showamount</b></td>
                                                     <td><b>$showdate</b></td></tr>";
                                                             }
-
+                                                        }
                                                         ?>
 
 
