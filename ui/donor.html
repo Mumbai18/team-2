@@ -48,6 +48,7 @@
         </div>
         <div class="form formRegister">
             <h2>Create an account</h2>
+<<<<<<< HEAD
             <form action="../php/donor.php" method="post">
                 <input type="text" placeholder="Username" id="username2" />
                 <input type="text" placeholder="PAN No" id="pan" />
@@ -55,6 +56,15 @@
                 <input type="password" placeholder="Password" id="password2" />
                 <input type="email" placeholder="Email Address" id="email"/>
                 <input type="text" placeholder="Full Name" id="name"/>
+=======
+            <form action="donor.php" method="post">
+                <input type="text" placeholder="Username" id="username2" oninput="unValidate()" required />
+                <input type="text" placeholder="PAN No" id="pan" oninput="pan()" required />
+                <input type="text" placeholder="Address"  id="address" required/>
+                <input type="password" placeholder="Password" id="password2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>
+                <input type="email" placeholder="Email Address" id="email" oninput="emailValidate()"/>
+                <input type="text" placeholder="Full Name" id="fname" placeholder="Enter Full Name" oninput="fnValidate()" required/>
+>>>>>>> c22dd2d84cb566b64a9a4cf65a1fbec1154af6b8
                 <input type="tel" placeholder="Phone Number" id="phno"/>
                 <button id="btn_register">Register</button>
             </form>
@@ -72,6 +82,134 @@
     <script src="js/login.js"></script>
     <script src="js/pages.js" type="text/javascript"></script>
     <!-- end js include path -->
+
+
+
+    <script type="text/javascript">
+        function emailValidate()
+        {
+            var eid = document.getElementById("email");
+            var eidval = eid.value;
+            var atpos = eidval.indexOf("@");
+            var dotpos = eidval.lastIndexOf(".");
+            if(atpos<1 || (dotpos - atpos < 2) || dotpos==eidval.length-1)
+            {
+                eid.className+=" invalid";
+                return false;	
+            }
+            else
+            {
+                eid.className="input";
+                document.getElementById("mail").innerHTML="Please enter valid email_id";
+                return true;
+            }
+        }
+        
+        function pan()
+        {
+            var fpsw = document.getElementById("pan");
+            var fpswval = fpsw.value;
+            if(fpswval.length<10)
+            {
+                fpsw.className+=" invalid";
+                document.getElementById("panv").innerHTML="Please enter valid format";
+                return false;
+            } 
+            else 
+            {
+                fpsw.className="input";
+                return true;
+            }
+        }
+        /*
+        function passMatch()
+        {
+            var ps1 = document.getElementById("pw1");
+            var ps2 = document.getElementById("pw2");
+            var ps2val = ps2.value;
+            if(ps1.value!=ps2val || ps2val.length<8)
+            {
+                ps2.className+=" invalid";
+                document.getElementById("repassw").innerHTML="Please enter correct password";
+                return false;
+            } 
+            else 
+            {
+                ps2.className="input";
+                return true;
+            }
+        }
+        */
+        function phoneValidate()
+        {
+            var ph = document.getElementById("phno");
+            var phval = ph.value;
+            if(phval.length==10 && (/^\d{10}$/.test(phval)))
+            {
+                ph.className="input";
+                return true;
+            } 
+            else 
+            {
+                ph.className+=" invalid";
+                document.getElementById("phoneno").innerHTML="Please enter valid phone no.";
+                return false;
+            }
+        }
+        
+        function unValidate()
+        {
+            var un = document.getElementById("username2");
+            var unval = un.value;
+            if(unval.length>4 && unval.length<10 && unval.charAt(0).match(/[a-z]/i) && unval.indexOf(" ")==-1)
+            {
+                un.className="input";
+                return true;
+            } 
+            else 
+            {
+                un.className+=" invalid";
+                document.getElementById("user_name").innerHTML="Please enter valid Username";
+                return false;
+            }
+        }
+        
+        function fnValidate()
+        {
+            var fn = document.getElementById("fname");
+            var fnval = fn.value;
+            if(/^[a-z' 'A-Z]+$/.test(fnval) && fnval.indexOf(" ")!=fnval.length-1 && fnval.indexOf(" ")!=0 && fnval.indexOf(" ")!=-1 )
+            {
+                fn.className="input";
+                return true;
+            } 
+            else 
+            {
+                fn.className+=" invalid";
+                document.getElementById("full").innerHTML="Please enter Fullname";
+                return false;
+            }
+        }
+        
+        function checkAll()
+        {
+            if(emailValidate() && passValidate() && phoneValidate() && unValidate() && fnValidate())
+            {
+                document.regform.submit();
+                return true;
+            }
+            else
+            {
+                alert("Details not valid!");
+                return false;
+            }
+        }
+        </script>
+
+
+
+
+
 </body>
 
 <!-- Mirrored from radixtouch.in/hospital/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Sep 2017 15:31:57 GMT -->
