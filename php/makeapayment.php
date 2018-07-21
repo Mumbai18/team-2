@@ -324,6 +324,7 @@ on <= small devices and 4/12 page width on >= medium devices -->
                                     $amount=$_POST['amount'];
                                     $date=date();
                                     $query=mysqli_query($link,"INSERT INTO donation VALUES('$user',' $amount','' )") or die('No search executed');
+                                    echo "<h1>Thanks for donating!!</h1>"
                                     header("Location: index.php");
                                     ?>
                                 </div>
