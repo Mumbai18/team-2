@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -96,8 +99,10 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="login.html">
-                                            <i class="icon-logout"></i> Log Out </a>
+                                        <form action="logout.php" method="post">
+                                        
+                                            <i class="icon-logout"></i> Log Out
+                                        </form>
                                     </li>
                                 </ul>
                             </li>
@@ -253,13 +258,50 @@
                                                         <tr>
                                                             <th>No</th>
                                                             <th>Name</th>
-                                                            <th>Date Of Admit</th>
-                                                            <th>Diseases</th>
-                                                            <th>Room No</th>
-                                                            <th>Edit</th>
+                                                            <th>File No</th>
+                                                            <th>Hospital</th>
+                                                            <th>Gender</th>
+                                                            <th>Type of Cancer</th>
+                                                            <th>Type of Support</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                        
+                                                        <?php
+                                                        $link=mysqli_connect("localhost","root","") or die('CONNECTION ERROR');
+                                                        mysqli_select_db($link,"vcare") or die('DATABSE NOT SELECTED');
+                                                        $username=$_SESSION['username'];
+                                                        $date=date();
+                                                        $query=mysqli_query($link,"SELECT * FROM patient WHERE volunteer='$username' AND date ='$date' ") or die('No search executed');
+                                                        $count=mysqli_num_rows($query);
+                                                        if($count==0)
+                                                        {
+                                                            echo "<p>YOU HAVEN'T MADE ANY ANY NEW REGISTRATIONS TODAY!</p>";
+                                                        }
+                                                        else{
+                                                            $count=0;
+                                                            while($row=mysqli_fetch_array($query))
+                                                            {
+                                                                $count=$count+1;
+
+
+                                                                $showname=$row[1];
+                                                                $showfile=$row[2];
+                                                                $showhospital=$row[3];
+                                                                $showgender=$row[4];
+                                                                $showtype=$row[5];
+                                                                $showsupport=$row[6];
+                                                                echo "<tr><td>$count</td>
+
+                                                             <td><b>$showname</b></td>
+                                                             <td><b>$showfile</b></td>
+                                                             <td><b>$showhospital</b></td>
+                                                             <td><b>$showgender</b></td>
+                                                             <td><b>$showtype</b></td>
+                                                             <td><b>$showsupport</b></td></tr>"
+                                                            }
+                                                        ?>
+<!--
                                                         <tr>
                                                             <td>1</td>
                                                             <td>Jens Brincker</td>
@@ -404,6 +446,7 @@
                                                                 </a>
                                                             </td>
                                                         </tr>
+-->
                                                     </tbody>
                                                 </table>
                                             </div>
