@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <html lang="en">
 
 <!-- Mirrored from radixtouch.in/hospital/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Sep 2017 15:31:09 GMT -->
@@ -252,94 +255,39 @@
 													</tr>
 												</thead>
 												<tbody>
-													<tr>
-														<td>1</td>
-														<td>Jens Brincker</td>
-														<td>Dr.Kenny Josh</td>
-														<td>27/05/2016</td>
-														<td>
-															<span class="label label-sm label-success">Influenza</span>
-														</td>
-														<td>101</td>
-														<td><a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit" ><i class="fa fa-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
-													</tr>
-													<tr>
-														<td>2</td>
-														<td>Mark Hay</td>
-														<td>Dr. Mark</td>
-														<td>26/05/2017</td>
-														<td>
-															<span class="label label-sm label-warning"> Cholera </span>
-														</td>
-														<td>105</td>
-														<td><a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit" ><i class="fa fa-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
-													</tr>
-													<tr>
-														<td>3</td>
-														<td>Anthony Davie</td>
-														<td>Dr.Cinnabar</td>
-														<td>21/05/2016</td>
-														<td>
-															<span class="label label-sm label-success ">Amoebiasis</span>
-														</td>
-														<td>106</td>
-														<td><a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit" ><i class="fa fa-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
-													</tr>
-													<tr>
-														<td>4</td>
-														<td>David Perry</td>
-														<td>Dr.Felix </td>
-														<td>20/04/2016</td>
-														<td>
-															<span class="label label-sm label-danger">Jaundice</span>
-														</td>
-														<td>105</td>
-														<td><a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit" ><i class="fa fa-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
-													</tr>
-													<tr>
-														<td>5</td>
-														<td>Anthony Davie</td>
-														<td>Dr.Beryl</td>
-														<td>24/05/2016</td>
-														<td>
-															<span class="label label-sm label-success ">Leptospirosis</span>
-														</td>
-														<td>102</td>
-														<td><a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit" ><i class="fa fa-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
-													</tr>
-													<tr>
-														<td>6</td>
-														<td>Alan Gilchrist</td>
-														<td>Dr.Joshep</td>
-														<td>22/05/2016</td>
-														<td>
-															<span class="label label-sm label-warning ">Hepatitis</span>
-														</td>
-														<td>103</td>
-														<td><a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit" ><i class="fa fa-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
-													</tr>
-													<tr>
-														<td>7</td>
-														<td>Mark Hay</td>
-														<td>Dr.Jayesh</td>
-														<td>18/06/2016</td>
-														<td>
-															<span class="label label-sm label-success ">Typhoid</span>
-														</td>
-														<td>107</td>
-														<td><a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit" ><i class="fa fa-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
-													</tr>
-													<tr>
-														<td>8</td>
-														<td>Sue Woodger</td>
-														<td>Dr.Sharma</td>
-														<td>17/05/2016</td>
-														<td>
-															<span class="label label-sm label-danger">Malaria</span>
-														</td>
-														<td>108</td>
-														<td><a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit" ><i class="fa fa-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
-													</tr>
+													
+                                                    <?php
+                                                    $link=mysqli_connect("localhost","root","") or die('CONNECTION ERROR');
+                                                    mysqli_select_db($link,"vcare") or die('DATABSE NOT SELECTED');
+                                                    $username=$_SESSION['username'];
+                                                    $query=mysqli_query($link,"SELECT * FROM donation WHERE username=$username ") or die('No search executed');
+                                                    $count=mysqli_num_rows($query);
+                                                    if($count==0)
+                                                    {
+                                                    echo "<p>YOU HAVEN'T MADE ANY DONATIONS RECENTLY!</p>";
+                                                    }
+                                                    else{
+                                                    $count=0;
+                                                    while($row=mysqli_fetch_array($query))
+                                                    {
+                                                    $count=$count+1;
+
+
+                                                    $showamount=$row[1];
+                                                    $showdate=$row[2];
+
+                                                    echo "<tr><td>$count</td>
+
+                                                    <td><b>$showamount</b></td>
+                                                    <td><b>$showdate</b></td></tr>";
+                                                    }
+
+                                                    ?>
+												
+													
+													
+													
+												
 												</tbody>
 											</table>
 										</div>
