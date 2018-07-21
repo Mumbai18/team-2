@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <html lang="en">
 
 <!-- Mirrored from radixtouch.in/hospital/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Sep 2017 15:31:09 GMT -->
@@ -253,7 +256,33 @@
 												</thead>
 												<tbody>
 													
-													
+                                                    <?php
+                                                    $link=mysqli_connect("localhost","root","") or die('CONNECTION ERROR');
+                                                    mysqli_select_db($link,"vcare") or die('DATABSE NOT SELECTED');
+                                                    $username=$_SESSION['username'];
+                                                    $query=mysqli_query($link,"SELECT * FROM donation WHERE username=$username ") or die('No search executed');
+                                                    $count=mysqli_num_rows($query);
+                                                    if($count==0)
+                                                    {
+                                                    echo "<p>YOU HAVEN'T MADE ANY DONATIONS RECENTLY!</p>";
+                                                    }
+                                                    else{
+                                                    $count=0;
+                                                    while($row=mysqli_fetch_array($query))
+                                                    {
+                                                    $count=$count+1;
+
+
+                                                    $showamount=$row[1];
+                                                    $showdate=$row[2];
+
+                                                    echo "<tr><td>$count</td>
+
+                                                    <td><b>$showamount</b></td>
+                                                    <td><b>$showdate</b></td></tr>";
+                                                    }
+
+                                                    ?>
 												
 													
 													

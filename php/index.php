@@ -67,14 +67,14 @@ session_start();
                         <ul class="nav navbar-nav pull-right">
                             <!-- start language menu -->
                             <li>
-                                <a href="makeapayment.php">Make a Payment</a>
+                                <a href="makeapayment.html">Make a Payment</a>
                             </li>
                             <!-- end language menu -->
                             <!-- start manage user dropdown -->
                             <li class="dropdown dropdown-user">
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                                     <img alt="" class="img-circle " src="img/dp.svg" />
-                                    
+                                    <span class="username username-hide-on-mobile"> Kiran </span>
                                     <i class="fa fa-angle-down"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-default">
@@ -99,10 +99,8 @@ session_start();
                                         </a>
                                     </li>
                                     <li>
-                                        <form action="logout.php" method="post">
-
-                                            <i class="icon-logout"></i> Log Out
-                                        </form>
+                                        <a href="login.html">
+                                            <i class="icon-logout"></i> Log Out </a>
                                     </li>
                                 </ul>
                             </li>
@@ -112,7 +110,7 @@ session_start();
                 </div>
             </div>
             <!-- end header -->
-            
+            <div class="clearfix"> </div>
             <!-- start page container -->
             <div class="page-container">
                 <!-- start sidebar menu -->
@@ -131,9 +129,7 @@ session_start();
                                             <img src="img/dp.svg" class="img-circle user-img-circle" alt="User Image" />
                                         </div>
                                         <div class="pull-left info">
-                                            <?php
-                                            echo '$_SESSION["name"]' 
-                                            ?>
+                                            <p>Kiran Patel</p>
                                         </div>
                                     </div>
                                 </li>
@@ -215,7 +211,6 @@ session_start();
                         </div>
                     </div>
                 </div>
-            </div>
                 <!-- end sidebar menu --> 
                 <!-- start page content -->
                 <div class="page-content-wrapper">
@@ -237,8 +232,7 @@ session_start();
                             <div class="col-md-12 col-sm-12">
                                 <div class="card  card-topline-yellow">
                                     <div class="card-head">
-                                        <header>YOUR DONATION HISTORY</header>
-                                    </div>
+                                        <header>ADMIT PATIENT LIST</header>
                                         <div class="tools">
                                             <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
                                             <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
@@ -252,51 +246,76 @@ session_start();
                                                     <thead>
                                                         <tr>
                                                             <th>No</th>
-                                                            <th>Amount</th>
-                                                            <th>Date</th>
+                                                            <th>Name</th>
+                                                            <th>Assigned Doctor</th>
+                                                            <th>Date Of Admit</th>
+                                                            <th>Diseases</th>
+                                                            <th>Room No</th>
+                                                            <th>Edit</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+
                                                         <?php
-                                                    $link=mysqli_connect("localhost","root","") or die('CONNECTION ERROR');
-                                                    mysqli_select_db($link,"vcare") or die('DATABSE NOT SELECTED');
-                                            $username=$_SESSION['username'];
-                                            $query=mysqli_query($link,"SELECT * FROM donation WHERE username=$username ") or die('No search executed');
-                                                    $count=mysqli_num_rows($query);
-                                                    if($count==0)
-                                                    {
-                                                        echo "<p>YOU HAVEN'T MADE ANY DONATIONS RECENTLY!</p>";
-                                                    }
-                                                    else{
-                                                        $count=0;
-                                                        while($row=mysqli_fetch_array($query))
+                                                        $link=mysqli_connect("localhost","root","") or die('CONNECTION ERROR');
+                                                        mysqli_select_db($link,"vcare") or die('DATABSE NOT SELECTED');
+                                                        $username=$_SESSION['username'];
+                                                        $query=mysqli_query($link,"SELECT * FROM donation WHERE username=$username ") or die('No search executed');
+                                                        $count=mysqli_num_rows($query);
+                                                        if($count==0)
                                                         {
-                                                        $count=$count+1;
-                                                        
-                                                       
-                                                        $showamount=$row[1];
-                                                        $showdate=$row[2];
-                                                        
-                                                            echo "<tr><td>$count</td>
-                                                           
-                                                             <td><b>$showamount</b></td>
-                                                             <td><b>$showdate</b></td></tr>";
+                                                            echo "<p>YOU HAVEN'T MADE ANY DONATIONS RECENTLY!</p>";
                                                         }
+                                                        else{
+                                                            $count=0;
+                                                            while($row=mysqli_fetch_array($query))
+                                                            {
+                                                                $count=$count+1;
+
+
+                                                                $showamount=$row[1];
+                                                                $showdate=$row[2];
+
+                                                                echo "<tr><td>$count</td>
+
+                                                    <td><b>$showamount</b></td>
+                                                    <td><b>$showdate</b></td></tr>";
+                                                            }
 
                                                         ?>
+
+
+
+
+
                                                     </tbody>
                                                 </table>
                                             </div>
-                                        </div>
+                                        </div>	
                                     </div>
-                            </div>          
+                                </div>
+                            </div>
+                        </div>
                         <!-- end admited patient list -->
-                    
-              
+                    </div>
+                </div>
                 <!-- end page content -->
                 <!-- start chat sidebar -->
-                
-                            <!-- End Doctor Chat --> 
+                <div class="chat-sidebar-container" data-close-on-body-click="false">
+                    <div class="chat-sidebar">
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a href="javascript:;" data-target="#quick_sidebar_tab_1" data-toggle="tab"> Users
+                                    <span class="badge badge-danger">4</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" data-target="#quick_sidebar_tab_3" data-toggle="tab"> <i class="icon-settings"></i> Settings
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content">
                             <!-- Start Setting Panel --> 
                             <div class="tab-pane chat-sidebar-settings" id="quick_sidebar_tab_3">
                                 <div class="chat-sidebar-settings-list">
@@ -365,11 +384,12 @@ session_start();
                                     </div>
                                 </div>
                             </div>
-                        
-                    
-                
+                        </div>
+
+                    </div>
+                </div>
                 <!-- end chat sidebar -->
-            
+            </div>
             <!-- end page container -->
             <!-- start footer -->
             <div class="page-footer">
@@ -381,7 +401,7 @@ session_start();
                 </div>
             </div>
             <!-- end footer -->
-        
+        </div>
         <script src="js/jquery.min.js" type="text/javascript"></script>
         <script src="js/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="js/jquery.blockui.min.js" type="text/javascript"></script>
