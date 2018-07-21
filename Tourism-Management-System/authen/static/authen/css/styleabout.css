@@ -1,0 +1,176 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+   
+ 
+  }
+
+  #map {
+  width: auto ;
+  height: 50vh ;
+  margin:0;
+}
+
+.side{
+  background-color: #eeeeee;
+}
+
+  #logo1{
+  color:  #ffffff;
+  font: normal 35px 'Cookie', cursive;
+}
+
+#logo2{
+  color:  #5383d3;
+  font:normal 35px 'Cookie', cursive;
+}
+
+
+#progress{
+  width:50%;
+  margin:auto;
+  margin-top: 20px;
+}
+
+#progresshead{
+  text-align: left;
+  margin-left: 5px;
+  margin-top: 10px;
+}
+  #main {
+    margin-top: 5% !important;
+    flex: 1 0 auto; 
+    margin: auto;
+    text-align:center; 
+
+  }
+
+  .ourpic{
+    margin: auto;
+    margin-top: 40px;
+    width:100%;
+   
+  }
+  #heading{
+    font: normal 35px 'Cookie', cursive;
+  }
+
+
+   #subheading{
+    margin-top: 10px; 
+          font-size: 1.6em;
+          font-weight: bold;
+   }
+
+   img{
+    height:200px;
+    
+   }
+
+   .card{
+
+    margin: auto;
+    margin-top: 5%;
+    width: 172px;
+   }
+
+   .card1{
+    float: right;
+   }
+
+   .card2{
+    float: left;
+   }
+
+.card-title{
+  font-size: 1em !important;
+  text-shadow: 1px 1px black;
+
+}
+.ourpic{
+  margin-bottom: 5%;
+}
+@media screen and (max-width: 600px) {
+    .card2 {
+        float: none;
+    }
+    .card1{
+      float: none;
+    }
+
+    .card{
+      width: 300px;
+    }
+    img{
+    height:353px;
+    
+   }
+}
+
+#js{
+   width: 35px;
+   height: 35px;
+
+}
+
+
+
+
+
+i.icon-blue {
+    color: #81d4fa;
+}
+
+#selfdesc{
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.1em;
+
+}
+
+#workhead{
+  margin-top: 20px;
+  text-align: left;
+  font-weight: bold;
+}
+
+
+.workservices{
+  width: 80% !important;
+}
+#workbody{
+
+  text-align: left;
+  color: #9e9e9e;
+}
+
+   #headline{
+    width: 5%;
+     border: none;
+    height: 2px;
+    margin: auto;
+    /* Set the hr color */
+    color: #ef5350; /* old IE */
+    background-color: #ef5350; /* Modern Browsers */
+   }
+
+   #headpara{
+    margin: auto;
+    margin-top: 20px;
+    width:80%;
+    color: #9e9e9e;
+   }
+#current{
+border-bottom: 3px solid #ff8f00 ;
+ 
+}
+
+.brand-logo{
+		font-size: 1.7em !important;
+
+}
+
+.footer-distributed{
+  margin: 0 !important;
+}

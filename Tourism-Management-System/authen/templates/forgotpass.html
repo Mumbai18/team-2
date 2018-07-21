@@ -1,0 +1,43 @@
+{% extends "navbar.html" %}
+{% load static %}
+{% block content %}
+<body style="background : #717e86">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.authen/css/3.5.2/animate.min.css">
+  <link type="text/css" rel="stylesheet" href="{% static 'authen/css/materialize.min.css' %}" media="screen,projection" />
+  <link rel="stylesheet" href="{% static 'authen/css/style.css' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{% static 'authen/css/font-awesome.min.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:200" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'authen/css/footer-distributed-with-address-and-phones.css' %}">
+  <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="{% static  'authen/css/signup.css' %}">
+
+  <div class="custom-container" style="margin-top : 50px">
+    <div class="card" style="margin : -20px 0"></div>
+    <div class="card">
+      <h1 class="title">Forgot Password</h1>
+      <form method="POST" action="/authen/forgotpassword/">
+        {% csrf_token%}
+        <div class="input-container">
+          <input type="email" id="#{label}" required="required" name="email" />
+          <label for="#{label}">Email</label>
+          <div class="bar"></div>
+        </div>
+        <div class="button-container">
+          <button class="btn waves-effect waves-light indigo" type="submit" name="action">Reset Password
+    <i class="material-icons right">send</i>
+  </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="{% static 'authen/js/materialize.min.js' %}"></script>
+  <script src="{% static 'authen/js/signup.js' %}"></script>
+  <script src="{% static 'authen/js/index.js' %}"></script>
+
+
+  {% endblock content %}

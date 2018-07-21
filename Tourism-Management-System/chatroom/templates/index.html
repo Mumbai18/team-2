@@ -1,0 +1,36 @@
+{% extends "navbar.html" %} 
+{% load static %}
+ {% block content %}
+ <link type="text/css" rel="stylesheet" href="{% static 'authen/css/materialize.min.css' %}" media="screen,projection" />
+
+<link rel="stylesheet" href="{% static 'authen/css/style.css' %}">
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="{% static 'authen/css/font-awesome.min.css' %}">
+
+<link href="https://fonts.googleapis.com/css?family=Raleway:200" rel="stylesheet">
+
+<link rel="stylesheet" href="{% static 'authen/css/footer-distributed-with-address-and-phones.css' %}">
+<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
+<!-- <link rel="stylesheet" href="{%  static 'authen/css/signup.css' %}"> -->
+
+
+<link href="{% static 'chat/css/stylechat.css' %}" rel="stylesheet">
+<div id="spika-container">
+    <div id="initial-screen" style="position:absolute;width:100%;text-align:center;top:45%">
+        Loading Spika... <br />
+        <img src="{% static 'img/loader.gif' %}" />
+    </div>
+</div>
+<script type="text/javascript">
+    document.getElementById("initial-screen").style.height = document.documentElement.clientHeight + "px";
+</script>
+<script type="text/javascript" src="{% static 'chat/js/bundle.js' %}"></script>
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="{% static 'authen/js/materialize.min.js' %}"></script>
+<script src="{% static 'authen/js/signup.js' %}"></script>
+<script src="{% static 'authen/js/index.js' %}"></script>
+{% endblock content %}

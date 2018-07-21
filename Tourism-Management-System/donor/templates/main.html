@@ -1,0 +1,66 @@
+{% extends 'navbar.html' %} {% load static %} {% block content %}
+
+<!-- start page content -->
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="page-bar">
+            <div class="page-title-breadcrumb">
+                <div class=" pull-left">
+                    <div class="page-title">Dashboard</div>
+                </div>
+                <ol class="breadcrumb page-breadcrumb pull-right">
+                    <li>
+                        <i class="fa fa-home"></i>&nbsp;
+                        <a class="parent-item" href="index-2.html">Home</a>&nbsp;
+                        <i class="fa fa-angle-right"></i>
+                    </li>
+                    <li class="active">Dashboard</li>
+                </ol>
+            </div>
+        </div>
+        <!-- start admited patient list -->
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="card  card-topline-yellow">
+                    <div class="card-head">
+                        <header>ADMIT PATIENT LIST</header>
+                        <div class="tools">
+                            <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+                            <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+                            <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+                        </div>
+                    </div>
+                    <div class="card-body ">
+                        <div class="table-wrap">
+                            <div class="table-responsive">
+                                <table class="table display product-overview mb-30" id="support_table">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for instance in donation %}
+                                        <tr>
+                                            <td>{{instance.amount}}</td>
+                                            <td>{{instance.date}}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end admited patient list -->
+    </div>
+</div>
+<!-- end page content -->
+
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,80 @@
+{% extends 'navbar.html' %} 
+{% load static %}
+{% block content %}
+  <body style="background : #717e86 ">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link type="text/css" rel="stylesheet" href="{% static 'authen/css/materialize.min.css' %}" media="screen,projection" />
+  <link rel="stylesheet" href="{% static 'authen/css/style.css' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{% static 'authen/css/font-awesome.min.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:200" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'authen/css/footer-distributed-with-address-and-phones.css' %}">
+  <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="{%  static 'authen/css/signup.css' %}">
+  <style type="text/css">
+     #flydesc {
+    word-break: break-word !important;
+  }
+
+  .areat {
+    margin-top: 5px;
+  }
+  </style>
+
+<br><br>
+
+  <div class="custom-container" style="margin-top : 20px">
+    <div class="card" style="margin : -20px 0"></div>
+     <div class="card">
+      <h1 class="title">Register
+        <div class="close"></div>
+      </h1>
+      <form method="POST" action="/authen/register/" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="input-container">
+          <input type="text" id="#{label}" required="required" name="username" />
+          <label for="#{label}">Username*</label>
+          <div class="bar"></div>
+        </div>
+        <div class="input-container">
+          <input type="email" id="#{label}" required="required" name="email" />
+          <label for="#{label}">Email*</label>
+          <div class="bar"></div>
+        </div>
+        <div class="input-container">
+          <input type="password" id="#{label}" required="required" name="password" />
+          <label for="#{label}">Password*</label>
+          <div class="bar"></div>
+        </div>
+        <div class="input-container">
+          <input type="password" id="#{label}" required="required" name="confirmpassword" />
+          <label for="#{label}">Repeat Password*</label>
+          <div class="bar"></div>
+        </div>
+        <div class="input-container">Profile Pic*
+          <input type="file" id="#{label}" name="photo" />
+          <label for="#{label}"></label>
+          <div class="bar"></div>
+        </div>
+        <div class="input-container">Description
+            <textarea  type="text"   id="bio"  required="required" class="bio input" rows="30" cols="50" name="bio"></textarea>
+            <label id="flydesc" for="flydesc"></label>
+          </div>
+        <div class="button-container">
+           <button class="btn waves-effect waves-light indigo" type="submit" name="action">Regiser
+    <i class="material-icons right">send</i></button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="{% static 'authen/js/materialize.min.js' %}"></script>
+  <script src="{% static 'authen/js/signup.js' %}"></script>
+  <script src="{% static 'authen/js/index.js' %}"></script>
+ 
+  {% endblock content %}
+
+</body>
+</html>

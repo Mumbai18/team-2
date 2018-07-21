@@ -1,0 +1,167 @@
+{% extends "navbar.html" %} {% load static %} {% block content %}
+
+
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="{% static 'explore/css/reset.css' %}"> <!-- CSS reset -->
+	<link rel="stylesheet" href="{% static 'explore/css/stylefaq.css' %}"> <!-- Resource style -->
+	<script src="{% static 'explore/js/modernizr.js' %}"></script> <!-- Modernizr -->
+	
+      <link type="text/css" rel="stylesheet" href="{% static 'explore/css/materialize.min.css' %}"  media="screen,projection"/>
+<link rel="stylesheet" href="{% static 'explore/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'explore/css/footer-distributed-with-address-and-phones.css' %}">
+
+<body>
+
+<section class="cd-faq">
+	<ul class="cd-faq-categories">
+		<li><a class="selected" href="#basics">Basics</a></li>
+		<li><a href="#account">Account</a></li>
+		<li><a href="#payments">Payments</a></li>
+		<li><a href="#privacy">Privacy</a></li>
+		
+	</ul> <!-- cd-faq-categorzies -->
+
+	<div class="cd-faq-items">
+		<ul id="basics" class="cd-faq-group">
+			<li class="cd-faq-title"><h2>Basics</h2></li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">What is the purpose of travel book?</a>
+				<div class="cd-faq-content">
+					<p>Travelbook provides a cosmopolitan platform to gain and provide valuable real-time
+information for tourists regarding their travel destination and helps connect them together, to
+provide a safe, cordial and a comfortable tourism experience.
+</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">Why i should use Travelbook?</a>
+				<div class="cd-faq-content">
+					<p>Travelbook is a self-contained product which aims at bringing various tourists together and to
+provide real-time information regarding their travel.
+</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">Facilities provided by travelbook?
+</a>
+				<div class="cd-faq-content">
+					<p> Provide real-time location information as a query result to the user regarding a
+particular destination.
+ To facilitate uploading and sharing of media (photos, videos and blogs) by a
+user with other users.
+  Provide notifications to the users in case of a high-priority urgency
+by issuing travel warnings based on real-time calamity tracking.
+ Provide a location-specific chat-room platform for the users to interact and
+collaborate with other users.
+ User registration form for creating a personal profile through which a user can
+enjoy the entire set of functions provided in the application.
+</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			
+		</ul> <!-- cd-faq-group -->
+
+	
+
+		<ul id="account" class="cd-faq-group">
+			<li class="cd-faq-title"><h2>Account</h2></li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">How do I change my password?</a>
+				<div class="cd-faq-content">
+					<p>You can change your password by clicking the 'forgot password link'at the login page, you will then receive an email with details to further proceed.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">How do I delete my account?</a>
+				<div class="cd-faq-content">
+					<p>You can contact the admin direcly to request to delete your account, yoyr account will then be deacetvaed after 30 days.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">How do I change my account settings?</a>
+				<div class="cd-faq-content">
+					<p>You can change your account seting by going into the accounts section in your profile.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">I forgot my password. How do I reset it?</a>
+				<div class="cd-faq-content">
+					<p>You can change your password by clicking the 'forgot password link'at the login page, you will then receive an email with details to further proceed.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+		</ul> <!-- cd-faq-group -->
+
+		<ul id="payments" class="cd-faq-group">
+			<li class="cd-faq-title"><h2>Functionalities</h2></li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">Who can participate on the platform to list these experiences?</a>
+				<div class="cd-faq-content">
+					<p>Any individual or company that offers experiences to end consumers can participate on the platform. You can also participate if you are a travel enthusiast and can create experiences offered by service providers you could manage. We highly encourage service providers offering unique and quirky experiences to end consumers.
+</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">How do I Sign-up? Is there any fee for joining?
+</a>
+				<div class="cd-faq-content">
+					<p>You can sign-up by filling up a simple form at "link". This is the platform where you will also list your experiences and is called as Travelbook Activities Management Platform. The platform is entirely free and there isn’t any fee for signing up or using it. 
+</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">Is there any rating system for users?
+</a>
+				<div class="cd-faq-content">
+					<p>Yes. The blogs created by the users have a viewcount. higher the total viewcount, greater is the user’s rank.  </p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">How to use Forum?
+
+</a>
+				<div class="cd-faq-content">
+					<p>Each location page in the form of a blog created by the user will feature a forum at the bottom where all the users can interact with each other. You are required to login to use the forum feature.
+  </p>
+				</div> <!-- cd-faq-content -->
+			</li>
+		</ul> <!-- cd-faq-group -->
+
+		<ul id="privacy" class="cd-faq-group">
+			<li class="cd-faq-title"><h2>Privacy</h2></li>
+		
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">How can I access my account data?</a>
+				<div class="cd-faq-content">
+					<p>After login, you can go to my-profile page o see your details.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			
+		</ul> <!-- cd-faq-group -->
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+		
+	</div> <!-- cd-faq-items -->
+	<a href="#0" class="cd-close-panel">Close</a>
+</section> <!-- cd-faq -->
+<script src=" {% static 'explore/js/jquery-2.1.1.js' %}"></script>  
+<script src="{% static 'explore/js/jquery.mobile.custom.min.js' %}"></script> 
+<script src=" {% static 'explore/js/mainfaq.js' %}"></script> <!-- Resource jQuery -->  
+</body>
+{% endblock content %}

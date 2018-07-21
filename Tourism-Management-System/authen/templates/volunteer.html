@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from radixtouch.in/hospital/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Sep 2017 15:31:56 GMT -->
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="wnameth=device-wnameth, initial-scale=1" name="viewport" />
+    <meta name="description" content="Responsive Admin Template" />
+    <meta name="author" content="RedstarHospital" />
+    <title>Volunteer</title>
+
+    <!-- icons -->
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" type="text/css" />
+
+    <!-- bootstrap -->
+    <link href="{% static 'js/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+
+    <!-- style -->
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" />
+
+
+</head>
+
+<body>
+    <div class="form-title">
+        <h1>Login Form</h1>
+    </div>
+    <!-- Login Form-->
+    <div class="login-form text-center">
+        <div class="toggle">
+            <i class="fa fa-user-plus"></i>
+        </div>
+        <div class="form formLogin">
+            <h2>Login to your account</h2>
+            <form action="../php/volunteer.php" method="post">
+                <input type="text" placeholder="Username" name="username" />
+                <input type="password" placeholder="Password" name="password" />
+                <button name="btn_login">Login</button>
+                <div class="forgetPassword">
+                    <a href="javascript:voname(0)">Forgot your password?</a>
+                </div>
+            </form>
+        </div>
+        <div class="form formRegister">
+            <h2>Create an account</h2>
+            <form action="../php/volunteer.php" method="post">
+                <input type="text" placeholder="Username" name="username2" />
+                <input type="text" placeholder="Full Name" name="name" />
+                <input type="number" placeholder="Age" name="age" />
+                <input type="text" placeholder="Occupation" name="occupation" />
+                <input type="password" placeholder="Password" name="password2" />
+                <input type="tel" placeholder="Phone Number" name="phno" />
+
+                <button name="btn_register">Register</button>
+            </form>
+        </div>
+        <div class="form formReset">
+            <h2>Reset your password?</h2>
+            <form>
+                <input type="email" placeholder="Email Address" />
+                <button>Send Verification Email</button>
+            </form>
+        </div>
+    </div>
+    <!-- start js include path -->
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/login.js"></script>
+    <script src="js/pages.js" type="text/javascript"></script>
+    <!-- end js include path -->
+</body>
+
+<!-- Mirrored from radixtouch.in/hospital/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Sep 2017 15:31:57 GMT -->
+
+</html>

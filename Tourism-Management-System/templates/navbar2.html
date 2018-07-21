@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static  %}
+<!-- Mirrored from radixtouch.in/hospital/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Sep 2017 15:31:09 GMT -->
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="description" content="Responsive Admin Template" />
+    <meta name="author" content="RedstarHospital" />
+    <title>Redstar Hospital | Bootstrap Responsive Hospital Admin Template</title>
+
+    <!-- google font -->
+    />
+
+    <!-- icons -->
+    <link href="{% static 'js/simple-line-icons/simple-line-icons.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" type="text/css" />
+
+    <!--bootstrap -->
+    <link href="{% static 'js/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'js/bootstrap-switch/css/bootstrap-switch.min.css' %}" rel="stylesheet" type="text/css" />
+
+    <!-- Theme Styles -->
+    <link href="{% static 'css/theme_style.css' %}" rel="stylesheet" id="rt_style_components" type="text/css" />
+    <link href="{% static 'css/plugins.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet" type="text/css" />
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" />
+</head>
+
+<body class="page-header-fixed sidemenu-closed-hidelogo page-container-bg-solid page-content-white page-md">
+    <div class="page-wrapper">
+        <!-- start header -->
+        <div class="page-header navbar navbar-fixed-top">
+            <div class="page-header-inner ">
+                <!-- logo start -->
+                <div class="page-logo">
+                    <a href="index-2.html">
+                        <img src="{% static 'img/logo.png' %}" alt="logo" class="logo-default" /> </a>
+                    <div class="menu-toggler sidebar-toggler">
+                        <span></span>
+                    </div>
+                </div>
+                <!-- logo end -->
+                <form class="search-form-opened" action="#" method="GET">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search..." name="query">
+                        <span class="input-group-btn">
+                            <a href="javascript:;" class="btn submit">
+                                <i class="icon-magnifier"></i>
+                            </a>
+                        </span>
+                    </div>
+                </form>
+                <!-- start mobile menu -->
+                <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span></span>
+                </a>
+                <!-- end mobile menu -->
+                <!-- start header menu -->
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+                        <!-- start language menu -->
+                        <li>
+                            <a href="makeapayment.html">Make a Payment</a>
+                        </li>
+                        <!-- end language menu -->
+                        <!-- start manage user dropdown -->
+                        <li class="dropdown dropdown-user">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <img alt="" class="img-circle " src="{% static 'img/dp.svg' %}" />
+                                <span class="username username-hide-on-mobile"> Kiran </span>
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+                                    <a href="user_profile.html">
+                                        <i class="icon-user"></i> Profile </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon-settings"></i> Settings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="icon-directions"></i> Help
+                                    </a>
+                                </li>
+                                <li class="divider"> </li>
+                                <li>
+                                    <a href="lock_screen.html">
+                                        <i class="icon-lock"></i> Lock
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="login.html">
+                                        <i class="icon-logout"></i> Log Out </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- end manage user dropdown -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- end header -->
+        <div class="clearfix"> </div>
+        
+        {% block content %} {% endblock content %}
+
+        <!-- start page container -->
+
+        <!-- end page container -->
+        <!-- start footer -->
+        <div class="page-footer">
+            <div class="page-footer-inner"> 2017 &copy; RedStar Hospital Theme By
+                <a href="mailto:rtthememaker@gmail.com" target="_top">RT Theme maker</a>
+            </div>
+            <div class="scroll-to-top">
+                <i class="icon-arrow-up"></i>
+            </div>
+        </div>
+        <!-- end footer -->
+    </div>
+    <script src="{% static 'js/jquery.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/bootstrap/js/bootstrap.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/jquery.blockui.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/bootstrap-switch/js/bootstrap-switch.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/counterup/jquery.waypoints.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/counterup/jquery.counterup.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/jquery.slimscroll.js' %}"></script>
+    <script src="{% static 'js/app.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/layout.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/chart-js/Chart.bundle.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/chart-js/utils.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/chart-js/home-data.js' %}" type="text/javascript"></script>
+
+
+</body>
+
+<!-- Mirrored from radixtouch.in/hospital/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Sep 2017 15:31:50 GMT -->
+
+</html>
