@@ -39,9 +39,9 @@
         </div>
         <div class="form formLogin">
             <h2>Login to your account</h2>
-            <form>
-                <input type="text" placeholder="Username" />
-                <input type="password" placeholder="Password" />
+            <form action="volunteer.php" method="post">
+                <input type="text" placeholder="Username" id="username" />
+                <input type="password" placeholder="Password" id="password" />
                 <div class="remember text-left">
                     <div class="checkbox checkbox-primary">
                         <input id="checkbox2" type="checkbox" checked>
@@ -58,14 +58,14 @@
         </div>
         <div class="form formRegister">
             <h2>Create an account</h2>
-            <form>
-                <input type="text" placeholder="Username" />
-                <input type="text" placeholder="Full Name" />
-                <input type="number" placeholder="Age"/>
-                <input type="text" placeholder="Occupation"/>
-                <input type="password" placeholder="Password" />
-                <input type="tel" placeholder="Phone Number" />
-                <input type="text" placeholder="Why choose us" />
+            <form action="volunteer.php" method="post">
+                <input type="text" placeholder="Username" id="username2" />
+                <input type="text" placeholder="Full Name" id="name" />
+                <input type="number" placeholder="Age" id="age"/>
+                <input type="text" placeholder="Occupation" id="occupation"/>
+                <input type="password" placeholder="Password" id="password2" />
+                <input type="tel" placeholder="Phone Number" id="phno"/>
+               
                 <button>Register</button>
             </form>
         </div>
