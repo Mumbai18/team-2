@@ -111,8 +111,10 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="login.html">
-                                            <i class="icon-logout"></i> Log Out </a>
+                                        <form action="logout.php" method="post">
+
+                                            <i class="icon-logout"></i> Log Out
+                                        </form>
                                     </li>
                                 </ul>
                             </li>
