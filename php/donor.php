@@ -11,7 +11,7 @@ if(isset($_POST['btn_login']))
     $res=mysqli_query($link,"SELECT * FROM donor WHERE username='$user_name' and password='$password'");
     $row=mysqli_fetch_array($res);
     //Valid username and password
-    if($row['password'] == $password && $row['uname'] == $user_name)
+    if($row['password'] == $password && $row['username'] == $user_name)
     {
         //Admin Login
           $_SESSION['username'] = $row['username'];
