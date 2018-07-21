@@ -7,7 +7,7 @@ if(isset($_POST['btn_login']))
     
     $user_name = $_POST['username'];
     $password = $_POST['password'];
-    $res=mysqli_query($bd,"SELECT * FROM users WHERE uname='$user_name' and password='$password'");
+    $res=mysqli_query($bd,"SELECT * FROM user WHERE uname='$user_name' and password='$password'");
     $row=mysqli_fetch_array($res);
     //Valid username and password
     if($row['password'] == $password && $row['uname'] == $user_name)
@@ -29,7 +29,8 @@ if(isset($_POST['btn_register']))
     $email= $_POST['email'];
     $name=$_POST['name'];
     $phno=$_POST['phno'];
-    $query=mysqli_query($link,"INSERT INTO donor VALUES ('',$name,$user_name,$password2,$email,$phno)");
+    $type='donor';
+    $query=mysqli_query($link,"INSERT INTO user values ('',$name,$user_name,$password2,$email,$phno,$type)");
     if(!$query){echo mysqli_error($link);}
 	else 
 	{
