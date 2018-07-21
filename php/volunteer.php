@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $link=mysqli_connect("localhost","root","") or die('CONNECTION ERROR');
 mysqli_select_db($link,"vcare") or die('DATABSE NOT SELECTED');
@@ -28,7 +29,7 @@ if(isset($_POST['btn_register']))
     $password2= $_POST['password2'];
     $name=$_POST['name'];
     $phno=$_POST['phno'];
-    $query=mysqli_query($link,"INSERT INTO volunteer VALUES ('',$name,$user_name,$password2,$occupation,$age,$phno)");
+    $query=mysqli_query($link,"INSERT INTO volunteer VALUES ('','$name','$user_name','$password2','$occupation','$age','$phno')");
     if(!$query){echo mysqli_error($link);}
     else 
     {
