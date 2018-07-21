@@ -323,7 +323,7 @@ on <= small devices and 4/12 page width on >= medium devices -->
                                     $user=$_SESSION['username'];
                                     $amount=$_POST['amount'];
                                     $date=date();
-                                    $query=mysqli_query($link,"INSERT INTO donations VALUES('$user',' $amount','' )") or die('No search executed');
+                                    $query=mysqli_query($link,"INSERT INTO donation VALUES('$user',' $amount','' )") or die('No search executed');
                                     header("Location: index.php");
                                     ?>
                                 </div>
