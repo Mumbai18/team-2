@@ -7,7 +7,7 @@ if(isset($_POST['btn_login']))
     
     $user_name = $_POST['username'];
     $password = $_POST['password'];
-    $res=mysqli_query($bd,"SELECT * FROM users WHERE uname='$user_name' and password='$password'");
+    $res=mysqli_query($bd,"SELECT * FROM donor WHERE username='$user_name' and password='$password'");
     $row=mysqli_fetch_array($res);
     //Valid username and password
     if($row['password'] == $password && $row['uname'] == $user_name)
