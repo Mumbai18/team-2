@@ -710,7 +710,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <form action="logout.php" method="post">
+                                        <form action="../php/logout.php" method="post">
 
                                             <i class="icon-logout"></i> Log Out
                                         </form>
@@ -856,48 +856,51 @@
                                             <!-- text input -->
                                             <div class="form-group">
                                                 <label>Name</label>
-                                                <input type="text" class="form-control" placeholder="Enter ...">
+                                                <input type="text" class="form-control" placeholder="Enter ..." name="name">
                                             </div>
                                             <div class="form-group">
                                                 <label>File No.</label>
-                                                <input type="text" class="form-control" placeholder="Enter ..." >
+                                                <input type="text" class="form-control" placeholder="Enter ..." name="fileno" >
                                             </div>
                                             <div class="form-group">
                                                 <label>Hospital</label>
-                                                <input type="text" class="form-control" placeholder="Enter ..." >
+                                                <input type="text" class="form-control" placeholder="Enter ..." name="hospital" >
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Location</label>
+                                                <input type="text" class="form-control" placeholder="Enter ..." name="location">
                                             </div>
                                             <!-- checkbox -->
                                             <div class="form-group">Gender
-                                                <div class="checkbox checkbox-icon-black">
-                                                    <input id="checkbox1" type="checkbox">
-                                                    <label for="checkbox1">
+                                                <div class="radio">
+                                                    <input type="radio" name="optionsRadios" name="gender" value="option1" checked>
+                                                    <label for="optionsRadios1">
                                                         Male
                                                     </label>
                                                 </div>
-                                                <div class="checkbox checkbox-icon-black">
-                                                    <input id="checkbox2" type="checkbox" checked="checked">
-                                                    <label for="checkbox2">
+                                                <div class="radio">
+                                                    <input type="radio" name="optionsRadios" name="gender" value="option2">
+                                                    <label for="optionsRadios2">
                                                         Female
                                                     </label>
-                                                </div>
-
+                                                
                                             </div>
                                             <!-- radio -->
                                             <div class="form-group">Type of Cancer
                                                 <div class="radio">
-                                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                                    <input type="radio" name="optionsRadios" name="type" value="option1" checked>
                                                     <label for="optionsRadios1">
                                                         Oral Cancer
                                                     </label>
                                                 </div>
                                                 <div class="radio">
-                                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                                    <input type="radio" name="optionsRadios" name="type" value="option2">
                                                     <label for="optionsRadios2">
                                                         Kidney Cancer
                                                     </label>
                                                 </div>
                                                 <div class="radio">
-                                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+                                                    <input type="radio" name="optionsRadios" name="type" value="option3" disabled>
                                                     <label for="optionsRadios3">
                                                         Lung Cancer
                                                     </label>
@@ -906,7 +909,7 @@
                                             <!-- select -->
                                             <div class="form-group">
                                                 <label>Type Of Support</label>
-                                                <select class="form-control">
+                                                <select class="form-control" name="support">
                                                     <option>Childcare Support</option>
                                                     <option>Nutritional Support</option>
                                                     <option>Finance Towards Treatment</option>

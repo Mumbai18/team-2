@@ -9,6 +9,7 @@ if(isset($_POST['btn_login']))
     $gender=$_POST['gender'];
     $type=$_POST['type'];
     $support=$_POST['support'];
+    $location=$_POST['location'];
     $date=date();
     $query=mysqli_query($link,"INSERT INTO patient VALUES ('','$name','$fileno','$hospital','$gender','$type','$date','$volunteer')");
     $id = mysqli_query($link,"SELECT id FROM patient WHERE name='$name'");
