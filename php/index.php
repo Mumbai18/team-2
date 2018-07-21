@@ -255,7 +255,7 @@ session_start();
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <?php
+                                                       <!--  <?php
                                                     $link=mysqli_connect("localhost","root","") or die('CONNECTION ERROR');
                                                     mysqli_select_db($link,"vcare") or die('DATABSE NOT SELECTED');
                                             $username=$_SESSION['username'];
@@ -278,10 +278,11 @@ session_start();
                                                             echo "<tr><td>$count</td>
                                                            
                                                              <td><b>$showamount</b></td>
-                                                             <td><b>$showdate</b></td></tr>"
+                                                             <td><b>$showdate</b></td></tr>";
                                                         }
 
-                                                        ?>
+                                                        ?> -->
+                                                    </tbody>
                                                         
                         <!-- end admited patient list -->
                     
