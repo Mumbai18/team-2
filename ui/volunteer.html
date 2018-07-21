@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="wnameth=device-wnameth, initial-scale=1" name="viewport" />
     <meta name="description" content="Responsive Admin Template" />
     <meta name="author" content="RedstarHospital" />
     <title>Volunteer</title>
@@ -40,33 +40,33 @@
         <div class="form formLogin">
             <h2>Login to your account</h2>
             <form action="../php/volunteer.php" method="post">
-                <input type="text" placeholder="Username" id="username" />
-                <input type="password" placeholder="Password" id="password" />
+                <input type="text" placeholder="Username" name="username" />
+                <input type="password" placeholder="Password" name="password" />
                 <div class="remember text-left">
                     <div class="checkbox checkbox-primary">
-                        <input id="checkbox2" type="checkbox" checked>
+                        <input name="checkbox2" type="checkbox" checked>
                         <label for="checkbox2">
                             Remember me
                         </label>
                     </div>
                 </div>
-                <button id="btn_login">Login</button>
+                <button name="btn_login">Login</button>
                 <div class="forgetPassword">
-                    <a href="javascript:void(0)">Forgot your password?</a>
+                    <a href="javascript:voname(0)">Forgot your password?</a>
                 </div>
             </form>
         </div>
         <div class="form formRegister">
             <h2>Create an account</h2>
-            <form action="../php/volunteer.php" method="post">
-                <input type="text" placeholder="Username" id="username2" />
-                <input type="text" placeholder="Full Name" id="name" />
-                <input type="number" placeholder="Age" id="age"/>
-                <input type="text" placeholder="Occupation" id="occupation"/>
-                <input type="password" placeholder="Password" id="password2" />
-                <input type="tel" placeholder="Phone Number" id="phno"/>
+            <form action="volunteer.php" method="post">
+                <input type="text" placeholder="Username" name="username2" />
+                <input type="text" placeholder="Full Name" name="name" />
+                <input type="number" placeholder="Age" name="age"/>
+                <input type="text" placeholder="Occupation" name="occupation"/>
+                <input type="password" placeholder="Password" name="password2" />
+                <input type="tel" placeholder="Phone Number" name="phno"/>
                
-                <button id="btn_register">Register</button>
+                <button name="btn_register">Register</button>
             </form>
         </div>
         <div class="form formReset">

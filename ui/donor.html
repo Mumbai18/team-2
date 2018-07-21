@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="wnameth=device-wnameth, initial-scale=1" name="viewport" />
     <meta name="description" content="Responsive Admin Template" />
     <meta name="author" content="RedstarHospital" />
     <title>Donor</title>
@@ -41,32 +41,32 @@
         <div class="form formLogin">
             <h2>Log In</h2>
             <form action="../php/donor.php" method="post">
-                <input type="text" placeholder="Username" id="username" />
-                <input type="password" placeholder="Password" id="password" />
-                <button id="btn_login">Login</button>
+                <input type="text" placeholder="Username" name="username" />
+                <input type="password" placeholder="Password" name="password" />
+                <button name="btn_login">Login</button>
             </form>
         </div>
         <div class="form formRegister">
             <h2>Create an account</h2>
 <<<<<<< HEAD
             <form action="../php/donor.php" method="post">
-                <input type="text" placeholder="Username" id="username2" />
-                <input type="text" placeholder="PAN No" id="pan" />
-                <input type="text" placeholder="Address"  id="address"/>
-                <input type="password" placeholder="Password" id="password2" />
-                <input type="email" placeholder="Email Address" id="email"/>
-                <input type="text" placeholder="Full Name" id="name"/>
+                <input type="text" placeholder="Username" name="username2" />
+                <input type="text" placeholder="PAN No" name="pan" />
+                <input type="text" placeholder="Address"  name="address"/>
+                <input type="password" placeholder="Password" name="password2" />
+                <input type="email" placeholder="Email Address" name="email"/>
+                <input type="text" placeholder="Full Name" name="name"/>
 =======
             <form action="donor.php" method="post">
-                <input type="text" placeholder="Username" id="username2" oninput="unValidate()" required />
-                <input type="text" placeholder="PAN No" id="pan" oninput="pan()" required />
-                <input type="text" placeholder="Address"  id="address" required/>
-                <input type="password" placeholder="Password" id="password2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>
-                <input type="email" placeholder="Email Address" id="email" oninput="emailValidate()"/>
-                <input type="text" placeholder="Full Name" id="fname" placeholder="Enter Full Name" oninput="fnValidate()" required/>
+                <input type="text" placeholder="Username" name="username2" oninput="unValnameate()" required />
+                <input type="text" placeholder="PAN No" name="pan" oninput="pan()" required />
+                <input type="text" placeholder="Address"  name="address" required/>
+                <input type="password" placeholder="Password" name="password2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>
+                <input type="email" placeholder="Email Address" name="email" oninput="emailValnameate()"/>
+                <input type="text" placeholder="Full Name" name="fname" placeholder="Enter Full Name" oninput="fnValnameate()" required/>
 >>>>>>> c22dd2d84cb566b64a9a4cf65a1fbec1154af6b8
-                <input type="tel" placeholder="Phone Number" id="phno"/>
-                <button id="btn_register">Register</button>
+                <input type="tel" placeholder="Phone Number" name="phno"/>
+                <button name="btn_register">Register</button>
             </form>
         </div>
         <div class="form formReset">
@@ -86,33 +86,33 @@
 
 
     <script type="text/javascript">
-        function emailValidate()
+        function emailValnameate()
         {
-            var eid = document.getElementById("email");
-            var eidval = eid.value;
-            var atpos = eidval.indexOf("@");
-            var dotpos = eidval.lastIndexOf(".");
-            if(atpos<1 || (dotpos - atpos < 2) || dotpos==eidval.length-1)
+            var ename = document.getElementByname("email");
+            var enameval = ename.value;
+            var atpos = enameval.indexOf("@");
+            var dotpos = enameval.lastIndexOf(".");
+            if(atpos<1 || (dotpos - atpos < 2) || dotpos==enameval.length-1)
             {
-                eid.className+=" invalid";
+                ename.className+=" invalname";
                 return false;	
             }
             else
             {
-                eid.className="input";
-                document.getElementById("mail").innerHTML="Please enter valid email_id";
+                ename.className="input";
+                document.getElementByname("mail").innerHTML="Please enter valname email_name";
                 return true;
             }
         }
         
         function pan()
         {
-            var fpsw = document.getElementById("pan");
+            var fpsw = document.getElementByname("pan");
             var fpswval = fpsw.value;
             if(fpswval.length<10)
             {
-                fpsw.className+=" invalid";
-                document.getElementById("panv").innerHTML="Please enter valid format";
+                fpsw.className+=" invalname";
+                document.getElementByname("panv").innerHTML="Please enter valname format";
                 return false;
             } 
             else 
@@ -124,13 +124,13 @@
         /*
         function passMatch()
         {
-            var ps1 = document.getElementById("pw1");
-            var ps2 = document.getElementById("pw2");
+            var ps1 = document.getElementByname("pw1");
+            var ps2 = document.getElementByname("pw2");
             var ps2val = ps2.value;
             if(ps1.value!=ps2val || ps2val.length<8)
             {
-                ps2.className+=" invalid";
-                document.getElementById("repassw").innerHTML="Please enter correct password";
+                ps2.className+=" invalname";
+                document.getElementByname("repassw").innerHTML="Please enter correct password";
                 return false;
             } 
             else 
@@ -140,9 +140,9 @@
             }
         }
         */
-        function phoneValidate()
+        function phoneValnameate()
         {
-            var ph = document.getElementById("phno");
+            var ph = document.getElementByname("phno");
             var phval = ph.value;
             if(phval.length==10 && (/^\d{10}$/.test(phval)))
             {
@@ -151,15 +151,15 @@
             } 
             else 
             {
-                ph.className+=" invalid";
-                document.getElementById("phoneno").innerHTML="Please enter valid phone no.";
+                ph.className+=" invalname";
+                document.getElementByname("phoneno").innerHTML="Please enter valname phone no.";
                 return false;
             }
         }
         
-        function unValidate()
+        function unValnameate()
         {
-            var un = document.getElementById("username2");
+            var un = document.getElementByname("username2");
             var unval = un.value;
             if(unval.length>4 && unval.length<10 && unval.charAt(0).match(/[a-z]/i) && unval.indexOf(" ")==-1)
             {
@@ -168,15 +168,15 @@
             } 
             else 
             {
-                un.className+=" invalid";
-                document.getElementById("user_name").innerHTML="Please enter valid Username";
+                un.className+=" invalname";
+                document.getElementByname("user_name").innerHTML="Please enter valname Username";
                 return false;
             }
         }
         
-        function fnValidate()
+        function fnValnameate()
         {
-            var fn = document.getElementById("fname");
+            var fn = document.getElementByname("fname");
             var fnval = fn.value;
             if(/^[a-z' 'A-Z]+$/.test(fnval) && fnval.indexOf(" ")!=fnval.length-1 && fnval.indexOf(" ")!=0 && fnval.indexOf(" ")!=-1 )
             {
@@ -185,22 +185,22 @@
             } 
             else 
             {
-                fn.className+=" invalid";
-                document.getElementById("full").innerHTML="Please enter Fullname";
+                fn.className+=" invalname";
+                document.getElementByname("full").innerHTML="Please enter Fullname";
                 return false;
             }
         }
         
         function checkAll()
         {
-            if(emailValidate() && passValidate() && phoneValidate() && unValidate() && fnValidate())
+            if(emailValnameate() && passValnameate() && phoneValnameate() && unValnameate() && fnValnameate())
             {
                 document.regform.submit();
                 return true;
             }
             else
             {
-                alert("Details not valid!");
+                alert("Details not valname!");
                 return false;
             }
         }
