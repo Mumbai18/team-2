@@ -67,7 +67,7 @@ $(document).ready(function() {
                 label: 'Dataset 1'
             }],
             labels: [
-                "Red",
+                "Mumbai",
                 "Orange",
                 "Yellow",
                 "Green",
