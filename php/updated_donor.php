@@ -1,13 +1,13 @@
 <?php
 $link=mysqli_connect("localhost","root","") or die('CONNECTION ERROR');
-mysqli_select_db($link,"vcare") or die('DATABSE NOT SELECTED');
+mysqli_select_db($link,"vcare") or die('DATABASE NOT SELECTED');
 
 if(isset($_POST['btn_login']))
 {
     
     $user_name = $_POST['username'];
     $password = $_POST['password'];
-    $res=mysqli_query($bd,"SELECT * FROM donor WHERE username='$user_name' and password='$password'");
+    $res=mysqli_query($bd,"SELECT * FROM users WHERE uname='$user_name' and password='$password'");
     $row=mysqli_fetch_array($res);
     //Valid username and password
     if($row['password'] == $password && $row['uname'] == $user_name)
@@ -33,10 +33,11 @@ if(isset($_POST['btn_register']))
     if(!$query){echo mysqli_error($link);}
 	else 
 	{
-		?>
+		<?php
         <script>alert("Successfully Registered");
         window.location.href='login.php';</script>
-        <?php
+        ?>
+        
 	}
     
 }
