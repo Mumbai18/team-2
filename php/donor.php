@@ -1,4 +1,5 @@
 <?php
+session_start();
 $link=mysqli_connect("localhost","root","") or die('CONNECTION ERROR');
 mysqli_select_db($link,"vcare") or die('DATABSE NOT SELECTED');
 
@@ -13,10 +14,12 @@ if(isset($_POST['btn_login']))
     if($row['password'] == $password && $row['uname'] == $user_name)
     {
         //Admin Login
-          $_SESSION['user'] = $row['uname'];
+          $_SESSION['name'] = $row['name'];
+          $_SESSION['username'] = $row['username'];
             header("Location: donor_dashboard.php");
  
     }
+    
    
 }
 
@@ -38,7 +41,8 @@ if(isset($_POST['btn_register']))
         window.location.href='login.php';</script>
         <?php
 	}
-    
+    $_SESSION["name"] = "name";
+    $_SESSION['username'] = $row['username'];
 }
 
 
