@@ -67,7 +67,7 @@ session_start();
                         <ul class="nav navbar-nav pull-right">
                             <!-- start language menu -->
                             <li>
-                                <a href="makeapayment.html">Make a Payment</a>
+                                <a href="../ui/makeapayment.html">Make a Payment</a>
                             </li>
                             <!-- end language menu -->
                             <!-- start manage user dropdown -->
@@ -234,7 +234,7 @@ session_start();
                             <div class="col-md-12 col-sm-12">
                                 <div class="card  card-topline-yellow">
                                     <div class="card-head">
-                                        <header>ADMIT PATIENT LIST</header>
+                                        <header>YOUR DONATION HISTORY</header>
                                         <div class="tools">
                                             <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
                                             <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
@@ -248,301 +248,44 @@ session_start();
                                                     <thead>
                                                         <tr>
                                                             <th>No</th>
-                                                            <th>Name</th>
-                                                            <th>Assigned Doctor</th>
-                                                            <th>Date Of Admit</th>
-                                                            <th>Diseases</th>
-                                                            <th>Room No</th>
-                                                            <th>Edit</th>
+                                                            <th>Amount</th>
+                                                            <th>Date</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr>
-                                                            <td>1</td>
-                                                            <td>Jens Brincker</td>
-                                                            <td>Dr.Kenny Josh</td>
-                                                            <td>27/05/2016</td>
-                                                            <td>
-                                                                <span class="label label-sm label-success">Influenza</span>
-                                                            </td>
-                                                            <td>101</td>
-                                                            <td><a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit" ><i class="fa fa-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>2</td>
-                                                            <td>Mark Hay</td>
-                                                            <td>Dr. Mark</td>
-                                                            <td>26/05/2017</td>
-                                                            <td>
-                                                                <span class="label label-sm label-warning"> Cholera </span>
-                                                            </td>
-                                                            <td>105</td>
-                                                            <td><a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit" ><i class="fa fa-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>3</td>
-                                                            <td>Anthony Davie</td>
-                                                            <td>Dr.Cinnabar</td>
-                                                            <td>21/05/2016</td>
-                                                            <td>
-                                                                <span class="label label-sm label-success ">Amoebiasis</span>
-                                                            </td>
-                                                            <td>106</td>
-                                                            <td><a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit" ><i class="fa fa-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>4</td>
-                                                            <td>David Perry</td>
-                                                            <td>Dr.Felix </td>
-                                                            <td>20/04/2016</td>
-                                                            <td>
-                                                                <span class="label label-sm label-danger">Jaundice</span>
-                                                            </td>
-                                                            <td>105</td>
-                                                            <td><a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit" ><i class="fa fa-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>5</td>
-                                                            <td>Anthony Davie</td>
-                                                            <td>Dr.Beryl</td>
-                                                            <td>24/05/2016</td>
-                                                            <td>
-                                                                <span class="label label-sm label-success ">Leptospirosis</span>
-                                                            </td>
-                                                            <td>102</td>
-                                                            <td><a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit" ><i class="fa fa-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>6</td>
-                                                            <td>Alan Gilchrist</td>
-                                                            <td>Dr.Joshep</td>
-                                                            <td>22/05/2016</td>
-                                                            <td>
-                                                                <span class="label label-sm label-warning ">Hepatitis</span>
-                                                            </td>
-                                                            <td>103</td>
-                                                            <td><a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit" ><i class="fa fa-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>7</td>
-                                                            <td>Mark Hay</td>
-                                                            <td>Dr.Jayesh</td>
-                                                            <td>18/06/2016</td>
-                                                            <td>
-                                                                <span class="label label-sm label-success ">Typhoid</span>
-                                                            </td>
-                                                            <td>107</td>
-                                                            <td><a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit" ><i class="fa fa-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>8</td>
-                                                            <td>Sue Woodger</td>
-                                                            <td>Dr.Sharma</td>
-                                                            <td>17/05/2016</td>
-                                                            <td>
-                                                                <span class="label label-sm label-danger">Malaria</span>
-                                                            </td>
-                                                            <td>108</td>
-                                                            <td><a href="javascript:void(0)" class="" data-toggle="tooltip" title="Edit" ><i class="fa fa-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>	
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                                        <?php
+                                                    $link=mysqli_connect("localhost","root","") or die('CONNECTION ERROR');
+                                                    mysqli_select_db($link,"vcare") or die('DATABSE NOT SELECTED');
+                                            $query=mysqli_query($link,"SELECT * FROM donation WHERE username= $_SESSION['username']") or die('No search executed');
+                                                    $count=mysqli_num_rows($query);
+                                                    if($count==0)
+                                                    {
+                                                        echo "<p>YOU HAVEN'T MADE ANY DONATIONS RECENTLY!</p>";
+                                                    }
+                                                    else{
+                                                        $count=0;
+                                                        while($row=mysqli_fetch_array($query))
+                                                        {
+                                                        $count=$count+1;
+                                                        $showid=$row[0];
+                                                        $showname=$row[1];
+                                                        $showamount=$row[2];
+                                                        $showdate=$row[3];
+                                                        
+                                                            echo "<tr><td>$count</td>
+                                                            <tr><td>$showname</td>
+                                                             <td><b>$showamount</b></td>
+                                                             <td><b>$showdate</b></td></tr>"
+                                                        }
+
+                                                        ?>
+                                                        
                         <!-- end admited patient list -->
-                    </div>
-                </div>
+                    
+              
                 <!-- end page content -->
                 <!-- start chat sidebar -->
-                <div class="chat-sidebar-container" data-close-on-body-click="false">
-                    <div class="chat-sidebar">
-                        <ul class="nav nav-tabs">
-                            <li class="active">
-                                <a href="javascript:;" data-target="#quick_sidebar_tab_1" data-toggle="tab"> Users
-                                    <span class="badge badge-danger">4</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;" data-target="#quick_sidebar_tab_3" data-toggle="tab"> <i class="icon-settings"></i> Settings
-                                </a>
-                            </li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <!-- Start Doctor Chat --> 
-                            <div class="tab-pane active chat-sidebar-chat" id="quick_sidebar_tab_1">
-                                <div class="chat-sidebar-list">
-                                    <div class="chat-sidebar-chat-users slimscroll-style" data-rail-color="#ddd" data-wrapper-class="chat-sidebar-list">
-                                        <h3 class="list-heading">Online</h3>
-                                        <ul class="media-list list-items">
-                                            <li class="media"><img class="media-object" src="img/doc/doc3.svg" width="35" height="35" alt="...">
-                                                <i class="online dot"></i>
-                                                <div class="media-body">
-                                                    <h4 class="media-heading">John Deo</h4>
-                                                    <div class="media-heading-sub">Spine Surgeon</div>
-                                                </div>
-                                            </li>
-                                            <li class="media">
-                                                <div class="media-status">
-                                                    <span class="badge badge-success">5</span>
-                                                </div> <img class="media-object" src="img/doc/doc1.svg" width="35" height="35" alt="...">
-                                                <i class="busy dot"></i>
-                                                <div class="media-body">
-                                                    <h4 class="media-heading">Rajesh</h4>
-                                                    <div class="media-heading-sub">Director</div>
-                                                </div>
-                                            </li>
-                                            <li class="media"><img class="media-object" src="img/doc/doc5.svg" width="35" height="35" alt="...">
-                                                <i class="away dot"></i>
-                                                <div class="media-body">
-                                                    <h4 class="media-heading">Jacob Ryan</h4>
-                                                    <div class="media-heading-sub">Ortho Surgeon</div>
-                                                </div>
-                                            </li>
-                                            <li class="media">
-                                                <div class="media-status">
-                                                    <span class="badge badge-danger">8</span>
-                                                </div> <img class="media-object" src="img/doc/doc4.svg" width="35" height="35" alt="...">
-                                                <i class="online dot"></i>
-                                                <div class="media-body">
-                                                    <h4 class="media-heading">Kehn Anderson</h4>
-                                                    <div class="media-heading-sub">CEO</div>
-                                                </div>
-                                            </li>
-                                            <li class="media"><img class="media-object" src="img/doc/doc2.svg" width="35" height="35" alt="...">
-                                                <i class="busy dot"></i>
-                                                <div class="media-body">
-                                                    <h4 class="media-heading">Sarah Smith</h4>
-                                                    <div class="media-heading-sub">Anaesthetics</div>
-                                                </div>
-                                            </li>
-                                            <li class="media"><img class="media-object" src="img/doc/doc7.svg" width="35" height="35" alt="...">
-                                                <i class="online dot"></i>
-                                                <div class="media-body">
-                                                    <h4 class="media-heading">Vlad Cardella</h4>
-                                                    <div class="media-heading-sub">Cardiologist</div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <h3 class="list-heading">Offline</h3>
-                                        <ul class="media-list list-items">
-                                            <li class="media">
-                                                <div class="media-status">
-                                                    <span class="badge badge-warning">4</span>
-                                                </div> <img class="media-object" src="img/doc/doc6.svg" width="35" height="35" alt="...">
-                                                <i class="offline dot"></i>
-                                                <div class="media-body">
-                                                    <h4 class="media-heading">Jennifer Maklen</h4>
-                                                    <div class="media-heading-sub">Nurse</div>
-                                                    <div class="media-heading-small">Last seen 01:20 AM</div>
-                                                </div>
-                                            </li>
-                                            <li class="media"><img class="media-object" src="img/doc/doc8.svg" width="35" height="35" alt="...">
-                                                <i class="offline dot"></i>
-                                                <div class="media-body">
-                                                    <h4 class="media-heading">Lina Smith</h4>
-                                                    <div class="media-heading-sub">Ortho Surgeon</div>
-                                                    <div class="media-heading-small">Last seen 11:14 PM</div>
-                                                </div>
-                                            </li>
-                                            <li class="media">
-                                                <div class="media-status">
-                                                    <span class="badge badge-success">9</span>
-                                                </div> <img class="media-object" src="img/doc/doc9.svg" width="35" height="35" alt="...">
-                                                <i class="offline dot"></i>
-                                                <div class="media-body">
-                                                    <h4 class="media-heading">Jeff Adam</h4>
-                                                    <div class="media-heading-sub">Compounder</div>
-                                                    <div class="media-heading-small">Last seen 3:31 PM</div>
-                                                </div>
-                                            </li>
-                                            <li class="media"><img class="media-object" src="img/doc/doc10.svg" width="35" height="35" alt="...">
-                                                <i class="offline dot"></i>
-                                                <div class="media-body">
-                                                    <h4 class="media-heading">Anjelina Cardella</h4>
-                                                    <div class="media-heading-sub">Physiotherapist</div>
-                                                    <div class="media-heading-small">Last seen 7:45 PM</div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="chat-sidebar-item">
-                                    <div class="chat-sidebar-chat-user">
-                                        <div class="page-quick-sidemenu">
-                                            <a href="javascript:;" class="chat-sidebar-back-to-list">
-                                                <i class="fa fa-angle-double-left"></i>Back
-                                            </a>
-                                        </div>
-                                        <div class="chat-sidebar-chat-user-messages">
-                                            <div class="post out">
-                                                <img class="avatar" alt="" src="img/dp.svg" />
-                                                <div class="message">
-                                                    <span class="arrow"></span> <a href="javascript:;" class="name">Kiran Patel</a> <span class="datetime">9:10</span>
-                                                    <span class="body-out"> could you send me menu icons ? </span>
-                                                </div>
-                                            </div>
-                                            <div class="post in">
-                                                <img class="avatar" alt="" src="img/doc/doc5.svg" />
-                                                <div class="message">
-                                                    <span class="arrow"></span> <a href="javascript:;" class="name">Jacob Ryan</a> <span class="datetime">9:10</span>
-                                                    <span class="body"> please give me 10 minutes. </span>
-                                                </div>
-                                            </div>
-                                            <div class="post out">
-                                                <img class="avatar" alt="" src="img/dp.svg" />
-                                                <div class="message">
-                                                    <span class="arrow"></span> <a href="javascript:;" class="name">Kiran Patel</a> <span class="datetime">9:11</span>
-                                                    <span class="body-out"> ok fine :) </span>
-                                                </div>
-                                            </div>
-                                            <div class="post in">
-                                                <img class="avatar" alt="" src="img/doc/doc5.svg" />
-                                                <div class="message">
-                                                    <span class="arrow"></span> <a href="javascript:;" class="name">Jacob Ryan</a> <span class="datetime">9:22</span>
-                                                    <span class="body">Sorry for
-                                                        the delay. i sent mail to you. let me know if it is ok or not.</span>
-                                                </div>
-                                            </div>
-                                            <div class="post out">
-                                                <img class="avatar" alt="" src="img/dp.svg" />
-                                                <div class="message">
-                                                    <span class="arrow"></span> <a href="javascript:;" class="name">Kiran Patel</a> <span class="datetime">9:26</span>
-                                                    <span class="body-out"> it is perfect! :) </span>
-                                                </div>
-                                            </div>
-                                            <div class="post out">
-                                                <img class="avatar" alt="" src="img/dp.svg" />
-                                                <div class="message">
-                                                    <span class="arrow"></span> <a href="javascript:;" class="name">Kiran Patel</a> <span class="datetime">9:26</span>
-                                                    <span class="body-out"> Great! Thanks. </span>
-                                                </div>
-                                            </div>
-                                            <div class="post in">
-                                                <img class="avatar" alt="" src="img/doc/doc5.svg" />
-                                                <div class="message">
-                                                    <span class="arrow"></span> <a href="javascript:;" class="name">Jacob Ryan</a> <span class="datetime">9:27</span>
-                                                    <span class="body"> it is my pleasure :) </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="chat-sidebar-chat-user-form">
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" placeholder="Type a message here...">
-                                                <div class="input-group-btn">
-                                                    <button type="button" class="btn green-bgcolor">
-                                                        <i class="fa fa-arrow-right"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                
                             <!-- End Doctor Chat --> 
                             <!-- Start Setting Panel --> 
                             <div class="tab-pane chat-sidebar-settings" id="quick_sidebar_tab_3">

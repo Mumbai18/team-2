@@ -15,6 +15,7 @@ if(isset($_POST['btn_login']))
     {
         //Admin Login
           $_SESSION['name'] = $row['name'];
+          $_SESSION['username'] = $row['username'];
             header("Location: donor_dashboard.php");
  
     }
@@ -41,6 +42,7 @@ if(isset($_POST['btn_register']))
         <?php
 	}
     $_SESSION["name"] = "name";
+    $_SESSION['username'] = $row['username'];
 }
 
 
