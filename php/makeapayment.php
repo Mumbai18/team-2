@@ -73,7 +73,9 @@ session_start();
                         <li class="dropdown dropdown-user">
                             <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                                 <img alt="" class="img-circle " src="img/dp.svg" />
-                                <span class="username username-hide-on-mobile"> Kiran </span>
+                                <span class="username username-hide-on-mobile">  <div class="pull-left info" style="margin-top:0px;">
+                                        <span><?php echo $_SESSION['username'];?></span>
+                                    </div></span>
                                 <i class="fa fa-angle-down"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-default">
@@ -105,17 +107,17 @@ session_start();
                             <li class="sidebar-user-panel">
                                 <div class="user-panel">
                                     <div class="pull-left image">
-                                        <img src="img/dp.svg" class="img-circle user-img-circle" alt="User Image" />
+                                        <img src="img/dp.svg" class="img-circle user-img-circle" style="width:100%;" alt="User Image" />
                                     </div>
-                                    <div class="pull-left info">
-                                        <p>Kiran Patel</p>
+                                    <div class="pull-left info" style="margin-top:0px;">
+                                        <span><?php echo $_SESSION['username'];?></span>
                                     </div>
                                 </div>
                             </li>
                             <li class="nav-item">
                                 <a href="javascript:;" class="nav-link nav-toggle">
                                     <i class="fa fa-caret-square-o-right"></i>
-                                    <span class="title">Multi Level Menu</span>
+                                    <span class="title"></span>
                                     <span class="arrow "></span>
                                 </a>
                             </li>
@@ -196,11 +198,15 @@ on <= small devices and 4/12 page width on >= medium devices -->
                                         </form>
                                         <?php
                                         if (isset($_POST['SUBMIT'])) {
-                                            $link=mysqli_connect("localhost","root","");
+                                           
+                                             $link=mysqli_connect("localhost","root","") or die('CONNECTION ERROR');
+                                            mysqli_select_db($link,"vcare") or die('DATABSE NOT SELECTED');
                                             $user=$_SESSION['username'];
-
+                                            echo $user;
                                             $AMOUNT=$_POST['AMOUNT'];
+                                            echo $AMOUNT;
                                             $date= date("Y/m/d");
+                                            echo $date;
                                             $query=mysqli_query($link,"INSERT INTO donation VALUES ('$user','$AMOUNT','$date')") OR DIE("HAGDAGHSGD");
                                             echo "<h1>THANKS FOR DONATING!!</h1>";
                                         }
