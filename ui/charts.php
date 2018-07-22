@@ -9,7 +9,7 @@ $connect = mysql_connect("localhost", "root", "",);
 echo "connection established!";
 
 
- $query = "SELECT location, count(*) as id FROM tbl_testing location";  
+ $query = "SELECT location, count(*) as id FROM tbl_testing GROUP BY location";  
  $result = mysqli_query($connect, $query);  
  ?>  
  <!DOCTYPE html>  
