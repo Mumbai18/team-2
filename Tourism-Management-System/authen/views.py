@@ -255,24 +255,24 @@ def volunteer(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 auth_login(request, user)
-                return HttpResponse('fjjf')
+                return HttpResponseRedirect('/volunteer/main/')
             else:
                 return HttpResponse('Your email/password combination does not exist.')
                 # return render(request, 'login.html', {"profile": None , "invalid" : True})
         else:
-            username = request.POST['username2']
-            email = request.POST['email']
-            pan = request.POST['pan']
-            address = request.POST['address']
-            password = request.POST['password2']
+            username = request.POST['username']
+            name = request.POST['name']
+            age = request.POST['age']
+            occupation = request.POST['occupation']
+            password = request.POST['password']
             phone_no = request.POST['phno']
             user = User.objects.create(username=username)
             user.set_password(password)
             user.save()
             print(user)
-            donor = Donor.objects.create(user = user,email = email, pan = pan, address = address,location = "Mumbai")
-            print(donor)
+            volunteer = Volunteer.objects.create(user = user,phone_no = phone_no, name = name, age = age, occupation = occupation)
+            print(volunteer)
             auth_login(request,user)
-            return HttpResponse('fjfjf')
+            return HttpResponseRedirect('/volunteer/main/')
     else:
         return render(request, 'volunteer.html')
