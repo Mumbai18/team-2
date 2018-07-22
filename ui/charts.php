@@ -1,6 +1,8 @@
 <?php  
- $connect = mysqli_connect("localhost", "root", "", "testing");  
- $query = "SELECT region, count(*) as number FROM tbl_employee GROUP BY region";  
+ $connect = mysqli_connect("localhost", "root", "", "testing");
+
+
+ $query = "SELECT location, count(*) as number FROM tbl_testing GROUP BY location";  
  $result = mysqli_query($connect, $query);  
  ?>  
  <!DOCTYPE html>  
