@@ -259,37 +259,53 @@
                                                 <label>Hospital</label>
                                                 <input type="text" class="form-control" placeholder="Enter ..." name="hospital">
                                             </div>
+                                            <div class="form-group">
+                                                <label>Age</label>
+                                                <input type="text" class="form-control" placeholder="Enter ..." name="age">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Area</label>
+                                                <input type="text" class="form-control" placeholder="Enter ..." name="area">
+                                            </div>
                                             <!-- checkbox -->
                                             
                                             
--->
-                                           <!-- Default unchecked -->
-<div class="custom-control custom-radio">
-  <input type="radio" class="custom-control-input" id="defaultUnchecked" name="defaultExampleRadios">
-  <label class="custom-control-label" for="defaultUnchecked">Default unchecked</label>
-</div>
 
-<!-- Default checked -->
-<div class="custom-control custom-radio">
-  <input type="radio" class="custom-control-input" id="defaultChecked" name="defaultExampleRadios" checked>
-  <label class="custom-control-label" for="defaultChecked">Default checked</label>
-</div>
+                                           <!-- Default unchecked -->
+                                           <div >Gender</div>
+                                                <div class="custom-control custom-radio">
+                                                  <input type="radio" class="custom-control-input" id="defaultUnchecked" name="gender" value="male">
+                                                  <label class="custom-control-label" for="defaultUnchecked" name="gender">Male</label>
+                                                </div>
+
+                                                <!-- Default checked -->
+                                                <div class="custom-control custom-radio">
+                                                  <input type="radio" class="custom-control-input" id="defaultChecked" name="gender" value="female" checked>
+                                                  <label class="custom-control-label" for="defaultChecked ">Female</label>
+                                                </div>
 
                                             </div>
+                                            <!-- Group of default radios - option 1 -->
+<div class="custom-control custom-radio">
+  <input type="radio" class="custom-control-input" id="defaultGroupExample" name="groupOfDefaultRadio" value="lung">
+  <label class="custom-control-label" for="defaultGroupExample1">Lung Cancer</label>
+</div>
+
+<!-- Group of default radios - option 2 -->
+<div class="custom-control custom-radio">
+  <input type="radio" class="custom-control-input" id="defaultGroupExample" name="groupOfDefaultRadio" value="kidney" checked>
+  <label class="custom-control-label" for="defaultGroupExample2">Kidney Cancer</label>
+</div>
+
+<!-- Group of default radios - option 3 -->
+<div class="custom-control custom-radio">
+  <input type="radio" class="custom-control-input" id="defaultGroupExample" name="groupOfDefaultRadio" value="mouth">
+  <label class="custom-control-label" for="defaultGroupExample3">Mouth Cancer </label>
+</div>
 
                                         
                                         <!-- radio -->
-                                        <div class="form-group">Type of Cancer
-                                            <div class="radio">
-                                                  <label><input checked type="radio" name="optradi">Mouth Cancer</label>
-                                                </div>
-                                                <div class="radio">
-                                                  <label><input type="radio" name="optradi">Lung Cancer</label>
-                                                </div>
-                                                <div class="radio disabled">
-                                                  <label><input type="radio" name="optradi" >Kidney Cancer</label>
-                                                </div>
-                                                                                        </div>
+                                        
                                         <!-- select -->
                                         <div class="form-group">
                                             <label>Type Of Support</label>
@@ -597,10 +613,7 @@
                                         <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="danger" data-on-text="ON" data-off-color="default"
                                             data-off-text="OFF">
                                     </li>
-                                    <li>Location
-                                        <input type="checkbox" class="make-switch" data-size="small" data-on-color="warning" data-on-text="ON" data-off-color="default"
-                                            data-off-text="OFF">
-                                    </li>
+                                    
                                     <li>Show Offline Users
                                         <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="success" data-on-text="ON" data-off-color="default"
                                             data-off-text="OFF">
@@ -639,13 +652,13 @@
                                     <!-- checkbox -->
                                     <div class="form-group">Gender
                                         <div class="radio">
-                                            <input type="radio" name="optionsRadios" name="gender" value="option1" checked>
+                                            <input type="radio" name="gender" value="option1" checked>
                                             <label for="optionsRadios1">
                                                 Male
                                             </label>
                                         </div>
                                         <div class="radio">
-                                            <input type="radio" name="optionsRadios" name="gender" value="option2">
+                                            <input type="radio" name="gender" value="option2">
                                             <label for="optionsRadios2">
                                                 Female
                                             </label>
@@ -654,19 +667,19 @@
                                         <!-- radio -->
                                         <div class="form-group">Type of Cancer
                                             <div class="radio">
-                                                <input type="radio" name="optionsRadios" name="type" value="option1" checked>
+                                                <input type="radio" name="type" value="option1" checked>
                                                 <label for="optionsRadios1">
                                                     Oral Cancer
                                                 </label>
                                             </div>
                                             <div class="radio">
-                                                <input type="radio" name="optionsRadios" name="type" value="option2">
+                                                <input type="radio" name="type" value="option2">
                                                 <label for="optionsRadios2">
                                                     Kidney Cancer
                                                 </label>
                                             </div>
                                             <div class="radio">
-                                                <input type="radio" name="optionsRadios" name="type" value="option3" disabled>
+                                                <input type="radio" name="type" value="option3" disabled>
                                                 <label for="optionsRadios3">
                                                     Lung Cancer
                                                 </label>
@@ -974,10 +987,8 @@
                                             <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="danger" data-on-text="ON" data-off-color="default"
                                                 data-off-text="OFF">
                                         </li>
-                                        <li>Location
-                                            <input type="checkbox" class="make-switch" data-size="small" data-on-color="warning" data-on-text="ON" data-off-color="default"
-                                                data-off-text="OFF">
-                                        </li>
+                                        
+                                        
                                         <li>Show Offline Users
                                             <input type="checkbox" class="make-switch" checked data-size="small" data-on-color="success" data-on-text="ON" data-off-color="default"
                                                 data-off-text="OFF">

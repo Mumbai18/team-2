@@ -102,9 +102,9 @@ session_start();
                                 </li>
                                 <li class="nav-item">
                                     <a href="javascript:;" class="nav-link nav-toggle">
-                                        <i class="fa fa-caret-square-o-right"></i>
-                                        <span class="title">Multi Level Menu</span>
-                                        <span class="arrow "></span>
+                                        
+                                        <span class="title"><a href="makeapayment.php">Make a Donation</a></span>
+                                        
                                     </a>
                                 </li>
                             </ul>
