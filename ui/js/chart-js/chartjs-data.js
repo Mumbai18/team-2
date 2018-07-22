@@ -139,37 +139,25 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var MONTHS = ["Financial", "Nutritional Support", "Childcare Support", "Dignity of Patients"];
     var color = Chart.helpers.color;
     var barChartData = {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        labels: ["Financial", "Nutritional Support", "Childcare Support", "Dignity of Patients"],
         datasets: [{
-            label: 'New Patients',
+            label: 'Expenditure',
             backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
             borderColor: window.chartColors.red,
-            borderWidth: 1,
+            borderWidth: 0.5,
             data: [
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor()
+                85,65,45,57,26
             ]
         }, {
-            label: 'Old Patients',
+            label: 'Alloted Income',
             backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
             borderColor: window.chartColors.blue,
-            borderWidth: 1,
+            borderWidth: 0.5,
             data: [
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor(),
-                randomScalingFactor()
+                50,40,79,48,78
             ]
         }]
 
@@ -186,7 +174,7 @@ $(document).ready(function () {
             },
             title: {
                 display: true,
-                text: 'Bar Chart'
+                text: 'Expenditure vs Investment'
             }
         }
     });
