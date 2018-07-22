@@ -1,21 +1,32 @@
 <?php
 session_start();
-if(isset($_POST['btn_login']))
+if(isset($_POST['Submit']))
 {
+     $link=mysqli_connect("localhost","root","") or die('CONNECTION ERROR');
+mysqli_select_db($link,"vcare") or die('DATABSE NOT SELECTED');
     $volunteer=$_SESSION['username'];
+    $age=$_POST['age'];
     $name=$_POST['name'];
+    //echo $name;
     $fileno=$_POST['fileno'];
+    //echo $fileno;
     $hospital=$_POST['hospital'];
+    //echo '$hospital';
     $gender=$_POST['gender'];
-    $type=$_POST['type'];
+    //echo $gender;
+    $type=$_POST['groupOfDefaultRadio'];
+    //echo $type;
     $support=$_POST['support'];
-    $location=$_POST['location'];
-    $date=date();
-    $query=mysqli_query($link,"INSERT INTO patient VALUES ('','$name','$fileno','$hospital','$gender','$type','$date','$volunteer')");
-    $id = mysqli_query($link,"SELECT id FROM patient WHERE name='$name'");
-    $query=mysqli_query($link,"INSERT INTO programme VALUES ('','$id','$type')");
+    //echo $support;
+    $area=$_POST['area'];
     
-    echo "<h1>New Patient Added</h1>"
+    $date=date("Y/m/d");
+    
+    $query=mysqli_query($link,"INSERT INTO patient VALUES ('','$name','$fileno','$gender','$age','$area','$type','$support','$volunteer','$date','$hospital')");
+   
+    $query=mysqli_query($link,"INSERT INTO programme VALUES ('','$name','$type')");
+    
+    echo "<h1>New Patient Added</h1>";
         header("Location: patientlist.php");
     
 }

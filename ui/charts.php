@@ -1,6 +1,8 @@
 <?php  
- $connect = mysqli_connect("localhost", "root", "", "testing");  
- $query = "SELECT region, count(*) as number FROM tbl_employee GROUP BY region";  
+ $connect = mysqli_connect("localhost", "root", "", "testing");
+
+
+ $query = "SELECT location, count(*) as id FROM tbl_testing GROUP BY location";  
  $result = mysqli_query($connect, $query);  
  ?>  
  <!DOCTYPE html>  
@@ -18,12 +20,12 @@
                           <?php  
                           while($row = mysqli_fetch_array($result))  
                           {  
-                               echo "['".$row["region"]."', ".$row["number"]."],";  
+                               echo "['".$row["location"]."', ".$row["id"]."],";  
                           }  
                           ?>  
                      ]);  
                 var options = {  
-                      title: 'Percentage of Regions',  
+                      title: 'Percentage of Location',  
                       //is3D:true,  
                       pieHole: 0.4  
                      };  
