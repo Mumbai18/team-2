@@ -35,11 +35,15 @@ mysqli_select_db($link,"vcare") or die('DATABSE NOT SELECTED');
     $name=$_POST['name'];
     $phno=$_POST['phno'];
     $query=mysqli_query($link,"INSERT INTO volunteer VALUES ('','$name','$user_name','$password2','$occupation','$age','$phno')");
-    if(!$query){echo mysqli_error($link);}
+    if(!$query){
+        echo mysqli_error($link);
+    }
     else 
     {
-        $_SESSION['username'] = $row['username'];
-        $_SESSION['name'] = $row['name'];
+        
+        $_SESSION['username'] = $user_name;
+        $_SESSION['name'] = $name;
+    
 ?>
 <script>alert("Successfully Registered");
     window.location.href='patientlist.php';</script>
