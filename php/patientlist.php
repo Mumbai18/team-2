@@ -99,10 +99,10 @@ session_start();
                                         </a>
                                     </li>
                                     <li>
-                                        <form action="logout.php" method="post">
+                                        <!-- <form action="login.php" method="post"> -->
                                         
-                                            <i class="icon-logout"></i> Log Out
-                                        </form>
+                                            <a href ="login.php">Log Out</a>
+                                       <!--  </form> -->
                                     </li>
                                 </ul>
                             </li>
@@ -259,7 +259,7 @@ session_start();
                                                             <th>No</th>
                                                             <th>Name</th>
                                                             <th>File No</th>
-                                                            <th>Hospital</th>
+                                                            <th>Gender</th>
                                                             <th>Gender</th>
                                                             <th>Type of Cancer</th>
                                                             <th>Type of Support</th>
@@ -268,9 +268,13 @@ session_start();
                                                     <tbody>
                                                         
                                                         <?php
+                                                        echo "ksgsad";
+                                                         $username=$_SESSION['username'];
+                                                         echo $username;
                                                         $link=mysqli_connect("localhost","root","") or die('CONNECTION ERROR');
                                                         mysqli_select_db($link,"vcare") or die('DATABSE NOT SELECTED');
-                                                        $username=$_SESSION['username'];
+                                                       
+                                                        
                                                         $date=date("Y/m/d");
                                                         $query=mysqli_query($link,"SELECT * FROM patient WHERE volunteer='$username' AND date ='$date' ") or die('No search executed');
                                                         $count=mysqli_num_rows($query);
@@ -287,10 +291,10 @@ session_start();
 
                                                                 $showname=$row[1];
                                                                 $showfile=$row[2];
-                                                                $showhospital=$row[3];
-                                                                $showgender=$row[4];
-                                                                $showtype=$row[5];
-                                                                $showsupport=$row[6];
+                                                                $showhospital=$row[10];
+                                                                $showgender=$row[3];
+                                                                $showtype=$row[6];
+                                                                $showsupport=$row[7];
                                                                 echo "<tr><td>$count</td>
 
                                                              <td><b>$showname</b></td>
