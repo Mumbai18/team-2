@@ -12,7 +12,7 @@ session_start();
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta name="description" content="Responsive Admin Template" />
     <meta name="author" content="RedstarHospital" />
-    <title>Redstar Hospital | Bootstrap Responsive Hospital Admin Template</title>
+    <title>V-Care</title>
 
     <!-- google font -->
     <link href="../../fonts.googleapis.com/cssbc32.css?family=Open+Sans:400,300,600,700&amp;subset=all" rel="stylesheet" type="text/css"
@@ -59,16 +59,6 @@ session_start();
                     </div>
                 </div>
                 <!-- logo end -->
-                <form class="search-form-opened" action="#" method="GET">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search..." name="query">
-                        <span class="input-group-btn">
-                            <a href="javascript:;" class="btn submit">
-                                <i class="icon-magnifier"></i>
-                            </a>
-                        </span>
-                    </div>
-                </form>
                 <!-- start mobile menu -->
                 <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
                     <span></span>
@@ -78,9 +68,6 @@ session_start();
                 <div class="top-menu">
                     <ul class="nav navbar-nav pull-right">
                         <!-- start language menu -->
-                        <li>
-                            <a href="makeapayment.html">Make a Payment</a>
-                        </li>
                         <!-- end language menu -->
                         <!-- start manage user dropdown -->
                         <li class="dropdown dropdown-user">
@@ -90,26 +77,6 @@ session_start();
                                 <i class="fa fa-angle-down"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-default">
-                                <li>
-                                    <a href="user_profile.html">
-                                        <i class="icon-user"></i> Profile </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="icon-settings"></i> Settings
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="icon-directions"></i> Help
-                                    </a>
-                                </li>
-                                <li class="divider"> </li>
-                                <li>
-                                    <a href="lock_screen.html">
-                                        <i class="icon-lock"></i> Lock
-                                    </a>
-                                </li>
                                 <li>
                                     <a href="login.php">
                                         <i class="icon-logout"></i> Log Out </a>
@@ -151,73 +118,6 @@ session_start();
                                     <span class="title">Multi Level Menu</span>
                                     <span class="arrow "></span>
                                 </a>
-                                <ul class="sub-menu">
-                                    <li class="nav-item">
-                                        <a href="javascript:;" class="nav-link nav-toggle">
-                                            <i class="fa fa-university"></i> Item 1
-                                            <span class="arrow"></span>
-                                        </a>
-                                        <ul class="sub-menu">
-                                            <li class="nav-item">
-                                                <a href="javascript:;" class="nav-link nav-toggle">
-                                                    <i class="fa fa-bell-o"></i> Arrow Toggle
-                                                    <span class="arrow "></span>
-                                                </a>
-                                                <ul class="sub-menu">
-                                                    <li class="nav-item">
-                                                        <a href="javascript:;" class="nav-link">
-                                                            <i class="fa fa-calculator"></i> Sample Link 1</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="#" class="nav-link">
-                                                            <i class="fa fa-clone"></i> Sample Link 2</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="#" class="nav-link">
-                                                            <i class="fa fa-cogs"></i> Sample Link 3</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">
-                                                    <i class="fa fa-file-pdf-o"></i> Sample Link 1</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">
-                                                    <i class="fa fa-rss"></i> Sample Link 2</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">
-                                                    <i class="fa fa-hdd-o"></i> Sample Link 3</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="javascript:;" class="nav-link nav-toggle">
-                                            <i class="fa fa-gavel"></i> Arrow Toggle
-                                            <span class="arrow"></span>
-                                        </a>
-                                        <ul class="sub-menu">
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">
-                                                    <i class="fa fa-paper-plane"></i> Sample Link 1</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">
-                                                    <i class="fa fa-power-off"></i> Sample Link 1</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">
-                                                    <i class="fa fa-recycle"></i> Sample Link 1
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="fa fa-volume-up"></i> Item 3 </a>
-                                    </li>
-                                </ul>
                             </li>
                         </ul>
                     </div>
@@ -227,30 +127,12 @@ session_start();
             <!-- start page content -->
             <div class="page-content-wrapper" style="width: 200%">
                 <div class="page-content" style="width: 1100px">
-                    <div class="page-bar">
-                        <div class="page-title-breadcrumb">
-                            <div class=" pull-left">
-                                <div class="page-title">Dashboard</div>
-                            </div>
-                            <ol class="breadcrumb page-breadcrumb pull-right">
-                                <li>
-                                    <i class="fa fa-home"></i>&nbsp;
-                                    <a class="parent-item" href="index-2.html">Home</a>&nbsp;
-                                    <i class="fa fa-angle-right"></i>
-                                </li>
-                                <li class="active">Dashboard</li>
-                            </ol>
-                        </div>
-                    </div>
                     <!-- start admited patient list -->
-
                     <div class="container">
                         <div class="row">
                             <!-- You can make it whatever width you want. I'm making it full width
 on <= small devices and 4/12 page width on >= medium devices -->
                             <div class="col-xs-12 col-md-4">
-
-
                                 <!-- CREDIT CARD FORM STARTS HERE -->
                                 <div class="panel panel-default credit-card-box">
                                     <div class="panel-heading display-table">
@@ -321,21 +203,14 @@ on <= small devices and 4/12 page width on >= medium devices -->
                                             $date= date("Y/m/d");
                                             $query=mysqli_query($link,"INSERT INTO donation VALUES ('$user','$AMOUNT','$date')") OR DIE("HAGDAGHSGD");
                                             echo "<h1>THANKS FOR DONATING!!</h1>";
-
                                         }
                                         ?>
                                     </div>
                                 </div>
                                 <!-- CREDIT CARD FORM ENDS HERE -->
-
-
                             </div>
-
-
-
                         </div>
                     </div>
-
                     <!-- end admited patient list -->
                 </div>
             </div>
@@ -346,16 +221,6 @@ on <= small devices and 4/12 page width on >= medium devices -->
         </div>
         <!-- end page container -->
         <!-- start footer -->
-        <div class="page-footer" style="
-        width: 1400px;
-    ">
-            <div class="page-footer-inner"> 2017 &copy; RedStar Hospital Theme By
-                <a href="mailto:rtthememaker@gmail.com" target="_top">RT Theme maker</a>
-            </div>
-            <div class="scroll-to-top">
-                <i class="icon-arrow-up"></i>
-            </div>
-        </div>
         <!-- end footer -->
     </div>
     <script src="js/jquery.min.js" type="text/javascript"></script>
