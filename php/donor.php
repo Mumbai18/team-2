@@ -37,8 +37,8 @@ if(isset($_POST['btn_register']))
 	else 
 	{
         $row=mysqli_fetch_array($query);
-        $_SESSION['username'] = $row['username'];
-        $_SESSION['name'] = $row['name'];
+        $_SESSION['username'] = $user_name;
+        $_SESSION['name'] = $name;
 		?>
         <script>alert("Successfully Registered");
             window.location.href='index.php';</script>

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
 
 <?php
 session_start();
 ?>
+<html lang="en">
+
 <!-- Mirrored from radixtouch.in/hospital/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Sep 2017 15:31:09 GMT -->
 
 <head>
@@ -115,7 +116,7 @@ session_start();
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a href="javascript:;" class="nav-link nav-toggle">
+                                <a href="index.php" class="nav-link nav-toggle">View Donations</a>
                                     <i class="fa fa-caret-square-o-right"></i>
                                     <span class="title"></span>
                                     <span class="arrow "></span>
@@ -202,11 +203,11 @@ on <= small devices and 4/12 page width on >= medium devices -->
                                              $link=mysqli_connect("localhost","root","") or die('CONNECTION ERROR');
                                             mysqli_select_db($link,"vcare") or die('DATABSE NOT SELECTED');
                                             $user=$_SESSION['username'];
-                                            echo $user;
+                                            
                                             $AMOUNT=$_POST['AMOUNT'];
-                                            echo $AMOUNT;
+                                            
                                             $date= date("Y/m/d");
-                                            echo $date;
+                                            
                                             $query=mysqli_query($link,"INSERT INTO donation VALUES ('$user','$AMOUNT','$date')") OR DIE("HAGDAGHSGD");
                                             echo "<h1>THANKS FOR DONATING!!</h1>";
                                         }
