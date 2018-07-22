@@ -1,0 +1,366 @@
+{% extends "navbar.html" %}
+{% load static %}
+{% block content %}
+
+    <link rel="shortcut icon" href="{% static 'src/public/css/Travel-Share-Icon.png' %}" />
+    <link href="../../../cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
+    <link rel="prefetch stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800,600">
+    <link rel="stylesheet" href="{% static 'src/public/css/libs/sweetalert.css' %}">
+    <link rel="stylesheet" href="{% static 'src/public/css/app.css' %}">
+    <link rel="stylesheet" href="{% static 'src/public/css/navigation.css' %}">
+    <link rel="stylesheet" href="{% static 'src/public/css/libs/typeahead.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'src/semantic/dist/semantic.min.css' %}">
+    <link rel="stylesheet" href="../../../cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/dropzone.css">
+    <link rel="stylesheet" href="{% static 'src/public/css/lity.css' %}">
+    <link rel="stylesheet" href="explore/css/footer-distributed-with-address-and-phones.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link type="text/css" rel="stylesheet" href="{% static 'explore/location/css/materialize.min.css' %}" media="screen,projection" />
+    <link rel="stylesheet" href="{% static 'explore/location/css/style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'location/css/font-awesome.min.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'explore/location/css/footer-distributed-with-address-and-phones.css' %}">
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css?family=Manuale" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+
+    <script type="text/javascript" src="{% static 'src/public/js/libs/jquery.js' %}"></script>
+        <style type="text/css">
+        hr{
+   border: 1px solid #ccc;
+}
+            .numby{     
+                font-size: 2em;
+                  font-family: 'Cookie', sans-serif;
+            }
+
+            .num{
+                 font-size: 1.2em;
+                  font-family: 'Montserrat', sans-serif;
+            }
+        </style>
+
+        <body>
+    <div class="container" style="background-color: #fafafa;">
+ <div class="card hovercard">
+                <div class="cardheader">
+                </div></div>
+ <div class="center-align"  style="font-family: 'Manuale', serif;" >
+     <br><br> <div class="col-xs-12 col-sm-12 col-md-12 center-align">               
+                      <br>
+                       <div id="profilepic"><img style = " height : 150px; width:150px; border-radius: 50%; border: 1px solid #292c2f;" src="{{ flyer.creater.profile_pic.url }}"></div>                  
+                       <div style="font-family: 'Manuale'; font-size: 1.4em; margin-top: 10px; color: #039be5"> Created by - {{flyer.creater}}</div>
+ <div style="font-family: 'Manuale'; font-size: 1em;color: #01579b "> Viewed  {{flyer.viewcount}} times.</div>
+<div style="font-family: 'Manuale'; font-size: 1em;color: #01579b "> Dated - {{flyer.date}}</div>
+<div style="font-family: 'Manuale'; font-size: 1em;color: #01579b " > Time  - {{flyer.time}}</div><br><br>
+<hr style="width:5%; border: 1px solid #ccc;"/>
+<div style="font-family: 'Manuale'; font-size: 1.3em;line-height: 30px;color: #263238 ; width: 85%;margin: auto" >  {{flyer.creater.bio}}</div>
+                         <hr style="width:5%; border: 1px solid #ccc;"/> <br><br><hr>
+        <div class="col-md-12">  <div class="center-align" id="Flyer-Title" style = "font-family: 'Playfair Display', serif;  text-transform: capitalize; font-size: 3em;color: #263238 "> {{flyer.title}} </div>  <hr style="width:5%; border: 1px solid #ccc;"/><div  class="center-align"  style="font-family: 'Manuale'; font-size: 1.3em;line-height: 30px;color: #263238 ; width: 85%;margin: auto"  id="summary"></div><br>
+       </div>
+ <div class="center-align weatherman" style="margin-top: '200px'">
+                <canvas id="weather" width="128" height="128" class="icons"></canvas> 
+            </div> 
+<br><br>
+<div class="row"> 
+      <div class="col s12 m4"> <img src="{% static 'src/public/css/sun.png' %}" style = " height : 150px; width:150px;"><br><span id="sunrise" class="numby"></span><br><span id="sunset" class="numby"></span><br></div>
+      <div class="col s12 m4">  <img src="{% static 'src/public/css/temperature.png' %}" style = " height : 150px; width:150px;"><br><span id="maxTemp" class="numby"></span><br>
+          <span id="minTemp" class="numby"></span><br></div>
+      <div class="col s12 m4">  <img src="{% static 'src/public/css/wind.png' %}" style = " height : 150px; width:150px;"><br>  </div><span id="windspeed" class="numby"></span>
+     <br>
+    </div>
+  <br>
+ <hr >
+  <div class="col-xs-12 col-sm-12 col-md-12 center-align">
+</div>
+</div>
+
+        
+<div class="center-align" id="Flyer-Title" style = "font-family: 'Playfair Display', serif;  text-transform: capitalize; font-size: 3em;color: #263238"> Description</div> <hr style="width:5%; border: 1px solid #ccc;"/>
+            <div id="Flyer-Description"  style="font-family: 'Manuale'; font-size: 1.3em;line-height: 30px;color: #263238 ; width: 92%;margin: auto; text-align:justify;"  >
+               &nbsp &nbsp &nbsp  &nbsp  &nbsp  &nbsp{{flyer.description}}
+            </div><hr>
+            <div class="center-align">
+             <div class="center-align" id="Flyer-Title" style = "font-family: 'Playfair Display', serif;  text-transform: capitalize; font-size: 3em;color: #263238"> Photos</div> <hr style="width:5%; border: 1px solid #ccc;"/>  <br><br>
+            </div>
+            <div class="col m12 gallery">
+                <div class="row">
+                    {% for photo in photos %}
+                    <div class="col s12   col m4  gallery_image center-align">
+                        <div class="img-wrap">
+                            <form method="post" action="http://davidtrushkov.com/travel/photos/100">
+                                <input type="hidden" name="_token" value="Tg5OWNRqqzUG9fLWKOUaDFkPUzf3l5nSyp8onTyC">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <a href="{{photo.photo.url}}" data-lity>
+                                   <img width="400" height="250" src="{{photo.photo.url}}" alt="" data-id="100"><br>
+                                 </a>
+                            </form>
+                        </div>
+                    </div>
+                 {% endfor %}
+               </div>
+               <br><hr><br>
+            </div>
+            <div class="center-align">
+              <div class="center-align" id="Flyer-Title" style = "font-family: 'Playfair Display', serif;  text-transform: capitalize; font-size: 3em;color: #263238"> Videos</div> <hr style="width:5%; border: 1px solid #ccc;"/>
+            </div><br><br>
+            <div class="col m12 gallery center-align">
+                <div class="row">
+                    {% for video in videos %}
+                    <div class="col s12   col m4   gallery_image">
+                        <div class="img-wrap">
+                            <form method="post" action="http://davidtrushkov.com/travel/photos/112">
+                                <input type="hidden" name="_token" value="Tg5OWNRqqzUG9fLWKOUaDFkPUzf3l5nSyp8onTyC">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <video style="width:400px;height:250px;" class='center responsive-video' controls>
+                                 <source src="{{video.video.url}}" type="video/mp4">
+                                </video>
+                            </form>
+                        </div>
+                    </div>
+                    {% endfor %}           
+                </div>
+            </div>
+
+        <hr>
+        <br>
+        <div class="center-align street"><div class="center-align" id="Flyer-Title" style = "font-family: 'Playfair Display', serif;  text-transform: capitalize; font-size: 3em;color: #263238"> 360° Street View</div> <hr style="width:5%; border: 1px solid #ccc;"/></div>
+        <div class="street" >
+    
+    <div id="mapp"></div>
+<div id="pano" class=" center-align" style="margin:auto; width: 700px; height: 500px"></div>
+
+<script type="text/javascript">
+  var mapp;
+      var panorama;
+      function initMap() {
+        var berkeley = { lat: parseFloat(loc[0]), lng: parseFloat(loc[1]) };
+        var sv = new google.maps.StreetViewService();
+        panorama = new google.maps.StreetViewPanorama(document.getElementById('pano'));
+        mapp = new google.maps.Map(document.getElementById('mapp'), {
+          center: berkeley,
+          zoom: 16,
+          streetViewControl: false
+        });
+        sv.getPanorama({location: berkeley, radius: 100}, processSVData);      
+      }
+
+      function processSVData(data, status) {
+        if (status === 'OK') {
+              $(".street").show();
+             console.log(parseFloat(loc[0])+"fffff");
+          panorama.setPano(data.location.pano);
+          panorama.setPov({
+            heading: 270,
+            pitch: 0
+          });
+          panorama.setVisible(true);    
+        }
+       
+        else{
+      $(".street").hide();
+        }     
+      }
+</script> 
+</div>
+ </div><br><br></div>
+
+  <div class="col-md-12">
+            <div class="center-align" id="Flyer-Title" style = "font-family: 'Playfair Display', serif;  text-transform: capitalize; font-size: 3em;color: #263238"> Location on Map</div> <hr style="width:5%; border: 1px solid #ccc;"/>
+            <div id="mapp"></div>       
+        </div>
+
+        <div class="col-md-12">
+            <div id="map"></div>
+            <br><br>
+            <br><br>
+            <hr>
+        </div>
+
+        <style type="text/css">
+       
+     .comments {
+    width: 97%;
+    margin: auto;
+}
+</style>
+  <div class="col s12 comments "> 
+        <div id="disqus_thread"></div>
+  </div>
+
+ <script >
+     var loc= "{{flyer.location}}";
+      loc=loc.slice(1,loc.length-1 );
+        loc=loc.split(",");
+console.log(loc);
+ </script>
+        <script>
+   
+        (function() { 
+        var d = document, s = d.createElement('script');
+        s.src = 'https://travelblog-2.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+ 
+    <script src="{% static 'src/public/js/libs/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static '/src/public/js/libs/bootstrap.js' %}"></script>
+    <script src="{% static 'src/public/js/libs/sweetalert.js' %}"></script>
+    <script src="{% static 'src/public/js/libs/FitText.js' %}"></script>
+    <script src="{% static 'src/semantic/dist/semantic.min.js' %}"></script>   
+    <script src="{% static 'src/public/js/main.js' %}"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'src/public/js/libs/jquery.js' %}"></script> 
+
+    <script>
+$(document).ready(function () {  
+  $(".button-collapse").sideNav();
+   passLoocation(loc[0], loc[1]);
+  $('.materialboxed').materialbox();
+});
+var temperature, Tminimum, Tmaximum;
+function passLoocation(x, y) {
+console.log(x+y);
+  var location = x + ", " + y;
+  setCity(location);
+  apicall(x, y);
+}
+function setCity(latLon) {
+  var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + latLon + "&sensor=true";
+  url = url.replace(/\s/g, "");
+  $.ajax({
+    format: "json",
+    dataType: "json",
+    url: url,
+    success: function (data) {
+    },
+  });
+}
+
+function apicall(lat, long) {
+  $.ajax({
+    url: 'https://api.darksky.net/forecast/c78c3d44fc4167f267b404d6d060f5b4/' + lat + ',' + long + '?exclude=minutely,hourly,alerts,flags&units=si',
+    dataType: 'jsonp',
+    success: function (response) {
+      var tmax = Math.round(response.daily.data[0].temperatureMax);
+      var tmin = Math.round(response.daily.data[0].temperatureMin);
+      $("#summary").html(response.daily.data[0].summary);
+      if (response.daily.data[0].sunriseTime && response.daily.data[0].sunsetTime) {
+        $("#sunrise").html("Sunrise : <span class=\"num\">" + timeConverter(response.daily.data[0].sunriseTime));
+        $("#sunset").html("Sunset : <span class=\"num\">" + timeConverter(response.daily.data[0].sunsetTime));
+      }
+      $("#maxTemp").html("Max temperature : <span class=\"num\">" + tmax + "</span> °C");
+      $("#minTemp").html("Min temperature : <span class=\"num\">" + tmin + "</span> °C");
+      $("#temp").html("Average temperature : <span class=\"num\">"+Math.round(response.currently.temperature) + "</span> °C");
+      $("#windspeed").html("Windspeed : <span class=\"num\">" + response.currently.windSpeed + "</span> m/s");
+
+      temperature = Math.round(response.currently.temperature);   //set value of global variables
+      Tminimum = tmin;
+      Tmaximum = tmax;
+
+      var icons = new Skycons({ "color": "#424242 " });
+      switch (response.currently.icon) {
+        case "rain":
+          icons.set("weather", Skycons.RAIN);
+          icons.play();
+          break;
+        case "clear-day":
+          icons.set("weather", Skycons.CLEAR_DAY);
+          icons.play();
+          break;
+        case "clear-night":
+          icons.set("weather", Skycons.CLEAR_NIGHT);
+          icons.play();
+          break;
+        case "partly-cloudy-day":
+          icons.set("weather", Skycons.PARTLY_CLOUDY_DAY);
+          icons.play();
+          break;
+        case "partly-cloudy-night":
+          icons.set("weather", Skycons.PARTLY_CLOUDY_NIGHT);
+          icons.play();
+          break;
+        case "cloudy":
+          icons.set("weather", Skycons.CLOUDY);
+          icons.play();
+          break;
+        case "sleet":
+          icons.set("weather", Skycons.SLEET);
+          icons.play();
+          break;
+        case "snow":
+          icons.set("weather", Skycons.SNOW);
+          icons.play();
+          break;
+        case "wind":
+          icons.set("weather", Skycons.WIND);
+          icons.play();
+          break;
+        case "fog":
+          icons.set("weather", Skycons.FOG);
+          icons.play();
+          break;
+      }
+    }
+  });
+}
+
+function timeConverter(UNIX_timestamp) {
+  var a = new Date(UNIX_timestamp * 1000);
+  var hour = a.getHours();
+  var min = a.getMinutes();
+  var time = '</span>&nbspam';
+  if (hour > 12) {
+    time = '</span>&nbsppm';
+    hour = hour - 12;
+  }
+  if (min / 10 < 1)
+    min = '0' + min;
+  if (hour / 10 < 1)
+    hour = '0' + hour;
+  var time = hour + ':' + min + time;
+  return time;
+}
+ 
+      
+    function initAutocomplete() {
+         initMap();
+       map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: parseFloat(loc[0]), lng: parseFloat(loc[1]) },
+        zoom: 13,
+        mapTypeId: 'roadmap'
+      });
+
+    var marker = new google.maps.Marker({
+    position: { lat: parseFloat(loc[0]), lng: parseFloat(loc[1])},
+    map: map,
+    title: '{{flyer.title}}'
+  }); 
+}    
+</script>
+
+    <script src="../../../cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/dropzone.js"></script>
+    <script type="application/javascript" src="{% static 'src/public/js/dropzone.forms.js' %}"></script>
+    <script type="application/javascript" src="{% static 'src/public/js/dropzone.flyer.js' %}"></script>
+    <script type="application/javascript" src="{% static 'src/public/js/lity.js' %}"></script>
+    <script type="text/javascript" src="https://rawgithub.com/darkskyapp/skycons/master/skycons.js"></script>
+
+    <script>
+        jQuery("#Flyer-Description").fitText(1.6, { minFontSize: '10px', maxFontSize: '18px' });
+    </script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaB_9hgeARViVKIT6O1pFKXRCSuYaol2A&amp;libraries=places&amp;callback=initAutocomplete"></script>
+   </body> 
+{% endblock content %}

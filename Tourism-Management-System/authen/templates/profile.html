@@ -1,0 +1,83 @@
+{% extends 'navbar.html' %} 
+{% load static %} 
+{% block content %}
+
+ <title>Travel Share</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="https://fonts.googleapis.com/css?family=Montserrat:200" rel="stylesheet">  
+<link href="https://fonts.googleapis.com/css?family=Manuale" rel="stylesheet">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'authen/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'authen/css/footer-distributed-with-address-and-phones.css' %}">
+<style type="text/css">
+    #Public-Flyer{
+      width: 90% !important;
+      margin: auto;
+    }
+  </style>
+<div class="container" id="Public-Profile-Main-Container">
+    <div>
+        <div class="col-lg-12 col-sm-12">
+            <div class="card hovercard">
+                <div class="cardheader">
+                </div>
+               <br><br><br>
+                <div class="info">
+                    <div class="title">
+                        <a target="_blank"> {{ profile.user.username }}</a>
+                    </div>              
+                      <div class="email" id="email">
+                        {{ profile.email }}
+                    </div><br>
+                     <div id="profilepic"><img style = " height : 150px; width:150px; border-radius: 50%; border: 1px solid #292c2f;" src="{{ profile.profile_pic.url }}"></div><br>
+                         <hr style="width:5%; border: 1px solid #ccc;"/>
+                     <div style="font-family: 'Manuale'; font-size: 1.3em;padding: 10px; line-height: 30px;"  class="desc" id="Public-Flyer">
+                        {{ profile.bio }}
+                    </div>
+                    <hr style="width:5%; border: 1px solid #ccc;"/>
+                </div>
+                <div class="bottom">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12" id="Public-Profile-Users-Flyers-Container">    
+ <h4 style = "font-family: 'Playfair Display', serif;  text-transform: capitalize; font-size: 2em;" class="center-align" id="Public-Profile-Header">{{profile.user.username}}'s travel blogs</h4><hr style="width:5%; border: 1px solid #ccc;"/>
+   <div class="row">              
+         {% for flyer in flyers %}     
+    <div class="col s12  col m6 col l4  gallery_image ">
+      <div class="card">
+        <div class="card-image">
+   {% if flyer.images.all %}
+        {%for i in flyer.images.all|slice:":1" %}
+            <img width="400" height="250" src="{{i.photo.url}}"></img>
+        {% endfor %}
+   {% else %}
+   <img width="400" height="250" src="{{ profile.profile_pic.url }}">
+   {% endif %}
+          <span class="card-title" style="font-size: 2em; text-shadow: 1px 1px #000;">{{flyer.title}} <br > <span style="font-size: 0.7em"> {{flyer.viewcount}} views</span></span> 
+          <a href="/dashboard/location/{{flyer.title}}/" class="btn-floating halfway-fab waves-effect waves-light red"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="card-content">
+          <p id="details" style="font-family: 'Manuale', serif; "> {{flyer.description|slice:"0:150"}}...</p>
+        </div>
+         <div class="card-action "> 
+          <div class="col s6" style="font-family: 'Manuale', serif; text-align:justify; color: #1a237e">  {{flyer.date}}</div>
+          <div  class="col s6" style="font-family: 'Manuale', serif; text-align:justify;color: #1a237e">  {{flyer.time}}</div><br>    
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+  </div>
+</div>
+{% endblock content %}

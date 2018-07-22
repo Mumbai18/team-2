@@ -1,0 +1,108 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+   
+ 
+  }
+.weathermain{
+  background-color: #9E9E9E;
+  width: 50%;
+  margin: auto;
+  border-radius: 25px;
+  
+}
+
+.file-upload {
+	position: relative;
+	display: inline-block;
+}
+
+.file-upload__label {
+  display: block;
+  padding: 1em 2em;
+  color: #fff;
+  background: #222;
+  border-radius: .4em;
+  transition: background .3s;
+  
+  
+}
+.file-upload__label:hover{
+   cursor: pointer;
+     background: #000;
+}
+    
+.file-upload__input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 1;
+    width:0;
+    height: 100%;
+    opacity: 0;
+}
+
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+}
+  #logo1{
+  color:  #ffffff;
+  font: normal 35px 'Cookie', cursive;
+}
+
+#logo2{
+  color:  #5383d3;
+  font:normal 35px 'Cookie', cursive;
+}
+
+  #main {
+    flex: 1 0 auto;
+    height: 100vh;
+     background-image: url(../images/mainpage.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+  }
+
+.heading{
+	font-size: 4.3em;
+font-family: 'Raleway', sans-serif;
+	
+}
+
+.subheading{
+font-size: 1.1em;
+}
+
+.maincontent{
+	text-shadow: 1px 1px #263238;
+	color:#f5f5f5;
+text-align: center;
+margin-top: 15%;
+
+}
+
+.brand-logo{
+		font-size: 1.7em !important;
+
+}
+
+.footer-distributed{
+  margin: 0 !important;
+}

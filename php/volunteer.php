@@ -9,15 +9,16 @@ if(isset($_POST['btn_login']))
 
     $user_name = $_POST['username'];
     $password = $_POST['password'];
-    $res=mysqli_query($bd,"SELECT * FROM volunteer WHERE uname='$user_name' and password='$password'");
+   
+     $res=mysqli_query($link,"SELECT * FROM volunteer WHERE username='$user_name' and password='$password'");
     $row=mysqli_fetch_array($res);
     //Valid username and password
-    if($row['password'] == $password && $row['uname'] == $user_name)
+    if($row['password'] == $password && $row['username'] == $user_name)
     {
         //Admin Login
         $_SESSION['username'] = $row['username'];
         $_SESSION['name'] = $row['name'];
-        header("Location: donor_dashboard.php");
+        header("Location: patientlist.php");
 
     }
     
@@ -25,6 +26,8 @@ if(isset($_POST['btn_login']))
 }
 if(isset($_POST['btn_register']))
 {
+    $link=mysqli_connect("localhost","root","") or die('CONNECTION ERROR');
+mysqli_select_db($link,"vcare") or die('DATABSE NOT SELECTED');
     $user_name = $_POST['username2'];
     $age = $_POST['age'];
     $occupation= $_POST['occupation'];
@@ -39,7 +42,7 @@ if(isset($_POST['btn_register']))
         $_SESSION['name'] = $row['name'];
 ?>
 <script>alert("Successfully Registered");
-    window.location.href='login.php';</script>
+    window.location.href='patientlist.php';</script>
 <?php
     }
 

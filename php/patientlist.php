@@ -271,7 +271,7 @@ session_start();
                                                         $link=mysqli_connect("localhost","root","") or die('CONNECTION ERROR');
                                                         mysqli_select_db($link,"vcare") or die('DATABSE NOT SELECTED');
                                                         $username=$_SESSION['username'];
-                                                        $date=date();
+                                                        $date=date("Y/m/d");
                                                         $query=mysqli_query($link,"SELECT * FROM patient WHERE volunteer='$username' AND date ='$date' ") or die('No search executed');
                                                         $count=mysqli_num_rows($query);
                                                         if($count==0)
@@ -298,8 +298,9 @@ session_start();
                                                              <td><b>$showhospital</b></td>
                                                              <td><b>$showgender</b></td>
                                                              <td><b>$showtype</b></td>
-                                                             <td><b>$showsupport</b></td></tr>"
+                                                             <td><b>$showsupport</b></td></tr>";
                                                             }
+                                                        }
                                                         ?>
 <!--
                                                         <tr>

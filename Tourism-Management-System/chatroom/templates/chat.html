@@ -1,0 +1,9 @@
+{% extends "navbar.html" %}
+    {% load static %}
+    {% block content %}
+    <link href="{% static 'chat/css/stylechat.css' %}" rel="stylesheet">
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'authen/js/materialize.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'chat/js/bundle.js' %}"></script>
+{% endblock content %}

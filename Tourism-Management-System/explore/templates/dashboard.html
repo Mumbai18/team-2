@@ -1,0 +1,409 @@
+{% extends "navbar.html" %} 
+{% load static %} 
+{% block content %}
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<link type="text/css" rel="stylesheet" href="{% static 'explore/css/materialize.min.css' %}" media="screen,projection" />
+<link rel="stylesheet" href="{% static 'explore/css/explorestyle.css' %}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="{% static 'explore/css/font-awesome.min.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Raleway:200" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'explore/css/footer-distributed-with-address-and-phones.css' %}">
+<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
+<style>
+  #map {
+    height: 100vh;
+  }
+
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  #description {
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  #infowindow-content .title {
+    font-weight: bold;
+  }
+
+  #infowindow-content {
+    display: none;
+  }
+
+  #map #infowindow-content {
+    display: inline;
+  }
+
+  .pac-card {
+    margin: 10px 10px 0 0;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    font-family: Roboto;
+  }
+
+  #pac-container {
+    padding-bottom: 12px;
+    margin-right: 12px;
+  }
+
+  .pac-controls {
+    display: inline-block;
+    padding: 5px 11px;
+  }
+
+  .pac-controls label {
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 300;
+  }
+
+  #pac-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 400px;
+  }
+
+  #pac-input:focus {
+    border-color: #4d90fe;
+  }
+
+  #title {
+    color: #fff;
+    background-color: #4d90fe;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 6px 12px;
+  }
+
+  #target {
+    width: 345px;
+  }
+
+  .flyimg {
+    margin-left: 12px;
+  }
+
+  #pop {
+    margin-right: 50000px !important;
+    text-align: left !important;
+  }
+
+  .bar {
+    width: 10000px !important;
+  }
+
+  .hrlin {
+    background-color: #424242;
+    border: 0 none;
+    color: #424242;
+    height: 1px;
+  }
+
+  #flydesc {
+    word-break: break-word !important;
+  }
+
+  .areat {
+    margin-top: 5px;
+  }
+
+  #loc {
+    pointer-events: none;
+  }
+
+  #loc.active {
+    pointer-events: auto;
+  }
+
+  #time {
+    pointer-events: none;
+  }
+
+  #time.active {
+    pointer-events: auto;
+  }
+
+  #date {
+    pointer-events: none;
+  }
+
+  #date.active {
+    pointer-events: auto;
+  }
+
+  #createflyer{
+    width: 100%;
+  }
+</style>
+
+<button class="btn createflyer" id="createflyer" onclick="flyer()">Want to create a Flyer?</button>
+<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+<div id="map"></div>
+<a class="modal-trigger" id="trig" href="#modal1"></a>
+<form class="col s12" method="POST" action="/dashboard/place/lol/" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div id="modal1" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <div class="text-center center-align">Enter flyer information</div>
+      <hr>
+      <div class="row">
+        <div class="row">
+          <div class="input-field col s12">
+            <input placeholder="" id="flyertitle" type="text" name="title">
+            <label for="flyertitle">Flyer title</label>
+          </div>
+          <div class="input-field col s12" style="margin-left: 1px">
+            <textarea class="areat input materialize-textarea"  name="desc"></textarea>
+            <label for="flydesc">Flyer description</label>
+          </div>
+        </div>
+        <div class="row"><span class="flyimg" for="flyimages">Choose Images to upload:</span>
+          <div class="input-field col s12">
+            <input type="file" name="img" multiple>
+          </div>
+        </div>
+        <hr class="hrlin">
+        <div class="row"><span class="flyimg" for="flyvideos">Choose Videos to upload:</span>
+          <div class="input-field col s12">
+            <input type="file" name="vid" multiple>
+          </div>
+        </div>
+        <hr class="hrlin">
+        <div class="input-field col s12">
+          <input placeholder="" id="loc" type="text" name="loc">
+          <label for="flyertitle">location</label>
+        </div>
+         <div class="input-field col s12">
+          <input placeholder="" id="date" type="text" name="date">
+          <label for="flyertitle">date</label>
+        </div>
+         <div class="input-field col s12">
+          <input placeholder="" id="time" type="text" name="time">
+          <label for="flyertitle">time</label>
+        </div>
+        <hr class="hrlin">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close "><button class="btn" type="submit">Submit</button></a>
+    </div>
+  </div>
+</form>
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script type="text/javascript">
+  var flyertitle = [];
+  var flyerlocation = [];
+
+  {% for instance in allflyers %}
+  flyertitle.push('{{ instance.title }}');
+  {% endfor %}
+
+  {% for instance in allflyers %}
+  flyerlocation.push('{{ instance.location }}');
+  {% endfor %}
+
+</script>
+
+<script>
+  $(document).ready(function () {
+    $('.modal').modal();
+  });
+  var map;
+  var marker;
+  var resultflytitle = [];
+  var flyeractive = 0;
+  var markers = [];
+  function flyer() {
+    if (!flyeractive) {
+      map.setOptions({ draggableCursor: "url(http://res.cloudinary.com/dzqifb2jz/image/upload/v1506440116/marker_kcmcbe.png), auto" });
+      document.getElementById("createflyer").innerHTML = "Place the marker in map!";
+    }
+    else {
+      map.setOptions({ draggableCursor: "url(https://maps.gstatic.com/mapfiles/openhand_8_8.cur), default" });
+      document.getElementById("createflyer").innerHTML = "Want to create another Flyer?";
+    }
+
+    flyeractive = !flyeractive;
+  }
+
+  function initAutocomplete() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: { lat: 19.1041088, lng: 72.8282423 },
+      zoom: 13,
+      mapTypeId: 'roadmap'
+    });
+    for (var i = 0; i < flyerlocation.length; i++) {
+      var x = flyerlocation[i];
+      x = x.slice(1, flyerlocation[i].length - 1);
+      x = x.split(",");
+
+      resultflytitle.push(x);
+    }
+
+    for (var i = 0; i < flyerlocation.length; i++) {
+      var mark = new google.maps.Marker({
+        position: new google.maps.LatLng(resultflytitle[i][0], resultflytitle[i][1]),
+        map: map,
+        title: flyertitle[i],
+        clickable: true
+      });
+      markers.push(mark);
+    }
+  
+    google.maps.event.addListener(markers, "click", setlocation);
+    function setlocation() {
+      window.location = '/dashboard/location/' + flyertitle[3];
+    }
+
+    for (var i = 0; i < markers.length; i++) {
+      var marker = markers[i];
+      google.maps.event.addListener(marker, 'click', function () {
+        window.location = '/dashboard/location/' + this.title;
+      });
+    }
+
+    var input = document.getElementById('pac-input');
+    var searchBox = new google.maps.places.SearchBox(input);
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+    map.addListener('bounds_changed', function () {
+      searchBox.setBounds(map.getBounds());
+    });
+
+    map.addListener('click', function (e) {
+      if (!flyeractive)
+        return;
+      flyer();
+      placeMarkerAndPanTo(e.latLng, map);
+    });
+
+    searchBox.addListener('places_changed', function () {
+      var places = searchBox.getPlaces();
+
+      if (places.length == 0) {
+        return;
+      }
+      markers.forEach(function (marker) {
+        marker.setMap(null);
+      });
+
+      var bounds = new google.maps.LatLngBounds();
+      places.forEach(function (place) {
+        if (!place.geometry) {
+          console.log("Returned place contains no geometry");
+          return;
+        }
+        var icon = {
+          url: place.icon,
+          size: new google.maps.Size(71, 71),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(17, 34),
+          scaledSize: new google.maps.Size(25, 25)
+        };
+
+        if (place.geometry.viewport) {
+          bounds.union(place.geometry.viewport);
+        } else {
+          bounds.extend(place.geometry.location);
+        }
+      });
+      map.fitBounds(bounds);
+    });
+  }
+  function placeMarkerAndPanTo(latLng, map) {
+    $("#loc").attr("value", latLng);
+
+
+digi();
+    function digi() {
+  var date = new Date(),
+      hour = date.getHours(),
+      minute = checkTime(date.getMinutes()),
+      ss = checkTime(date.getSeconds());
+      var dd = date.getDate();
+var mm = date.getMonth()+1; 
+var yyyy = date.getFullYear();
+  function checkTime(i) {
+    if( i < 10 ) {
+      i = "0" + i;
+    }
+    return i;
+  }
+if ( hour > 12 ) {
+  hour = hour - 12;
+  if ( hour == 12 ) {
+    hour = checkTime(hour);
+
+ $("#time").attr("value", hour+":"+minute+":"+ss+" AM");
+  }
+  else { 
+    hour = checkTime(hour);
+   $("#time").attr("value", hour+":"+minute+":"+ss+" PM");
+  }
+}
+else {
+ 
+  $("#time").attr("value", hour+":"+minute+":"+ss+" AM");
+}
+if(dd<10){
+    dd='0'+dd; 
+} 
+if(mm<10){
+    mm='0'+mm;
+} 
+var today = dd+'/'+mm+'/'+yyyy;
+
+  $("#date").attr("value", today);
+}
+
+    marker = new google.maps.Marker({
+      position: latLng,
+      map: map
+    });
+    map.panTo(latLng);
+    var comp = document.getElementById('trig');
+    try { //in firefox
+      comp.click();
+      return;
+    } catch (ex) { }
+    try { // in chrome
+      if (document.createEvent) {
+        var e = document.createEvent('MouseEvents');
+        e.initEvent('click', true, true);
+        comp.dispatchEvent(e);
+        return;
+      }
+    } catch (ex) { }
+    try { // in IE
+      if (document.createEventObject) {
+        var evObj = document.createEventObject();
+        comp.fireEvent("onclick", evObj);
+        return;
+      }
+    } catch (ex) { }
+  }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMFZPt61eARg_Ht1bfQY-NJZHlizHimlA&libraries=places&callback=initAutocomplete"
+  async defer></script>
+  
+{% endblock content %}

@@ -1,0 +1,321 @@
+/* body {
+  background: #e9e9e9;
+  color: #666666;
+  font-family: 'RobotoDraft', 'Roboto', sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+
+/* Rerun */
+
+/* Container */
+.custom-container {
+  position: relative;
+  max-width: 460px;
+  width: 100%;
+  margin: 0 auto 100px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+
+.card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 5px;
+  padding: 60px 0 40px 0;
+  box-sizing: border-box;
+  box-shadow: 0 1px 3px rgba(188, 90, 90, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+  /* Title */
+  /* Inputs */
+  /* ignore */
+  /* Footer */
+  /* Alt Card */
+}
+.card:first-child {
+  background: #fafafa;
+  height: 10px;
+  border-radius: 5px 5px 0 0;
+  margin: 0 10px;
+  padding: 0;
+}
+.card .title {
+  position: relative;
+  z-index: 1;
+  border-left: 5px solid #37474f;
+  margin: 0 0 35px;
+  padding: 10px 0 10px 50px;
+  color: #37474f;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.card .input-container {
+  position: relative;
+  margin: 0 60px 50px;
+}
+.card .input-container input {
+  outline: none;
+  border:none;
+  z-index: 1;
+  position: relative;
+  background: none;
+  width: 100%;
+  height: 60px;
+  border: 0;
+  color: #212121;
+  font-size: 18px;
+  font-weight: 400;
+}/* Card */
+
+.card .input-container input:focus ~ label {
+  color: #9d9d9d;
+  -webkit-transform: translate(-12%, -50%) scale(0.75);
+          transform: translate(-12%, -50%) scale(0.75);
+}
+.card .input-container input:focus ~ .bar:before, .card .input-container input:focus ~ .bar:after {
+  width: 50%;
+}
+.card .input-container input:valid ~ label {
+  color: #9d9d9d;
+  -webkit-transform: translate(-12%, -50%) scale(0.75);
+          transform: translate(-12%, -50%) scale(0.75);
+}
+.card .input-container label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #757575;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 60px;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+.card .input-container .bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #757575;
+  width: 100%;
+  height: 1px;
+}
+.card .input-container .bar:before, .card .input-container .bar:after {
+  content: '';
+  position: absolute;
+  background: #37474f;
+  width: 0;
+  height: 2px;
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
+}
+.card .input-container .bar:before {
+  left: 50%;
+}
+.card .input-container .bar:after {
+  right: 50%;
+}
+.card .ignore-container {
+  margin: 0 60px;
+  text-align: center;
+}
+
+.button-container{
+  text-align: center;
+}
+.card .ignore-container ignore {
+  outline: 0;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  background: 0;
+  width: 240px;
+  border: 2px solid #e3e3e3;
+  padding: 20px 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  overflow: hidden;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+.card .ignore-container ignore span {
+  position: relative;
+  z-index: 1;
+  color: #37474f;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+
+.card .ignore-container ignore:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  background: #37474f;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  margin: -15px 0 0 -15px;
+  opacity: 0;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+.card .ignore-container ignore:hover, .card .ignore-container ignore:active, .card .ignore-container ignore:focus {
+  border-color: #37474f;
+}
+.card .ignore-container ignore:hover span, .card .ignore-container ignore:active span, .card .ignore-container ignore:focus span {
+  color: #37474f;
+}
+.card .ignore-container ignore:active span, .card .ignore-container ignore:focus span {
+  color: #ffffff;
+}
+.card .ignore-container ignore:active:before, .card .ignore-container ignore:focus:before {
+  opacity: 1;
+  -webkit-transform: scale(10);
+  transform: scale(10);
+}
+.card .footer {
+  margin: 40px 0 0;
+  color: #d3d3d3;
+  font-size: 18px;
+  font-weight: 300;
+  text-align: center;
+}
+.card .footer a {
+  color: inherit;
+  text-decoration: none;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+.card .footer a:hover {
+  color: #bababa;
+}
+.card.alt {
+  position: absolute;
+  top: 40px;
+  right: -70px;
+  z-index: 10;
+  width: 140px;
+  height: 140px;
+  background: none;
+  border-radius: 100%;
+  box-shadow: none;
+  padding: 0;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+  /* Toggle */
+  /* Title */
+  /* Input */
+  /* ignore */
+}
+.card.alt .toggle {
+  position: relative;
+  background: #37474f;
+  width: 140px;
+  height: 140px;
+  border-radius: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  color: #ffffff;
+  font-size: 40px;
+  line-height: 140px;
+  text-align: center;
+  cursor: pointer;
+}
+.card.alt .toggle:before {
+  content: '\f040';
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+.card.alt .title,
+.card.alt .input-container,
+.card.alt .ignore-container {
+  left: 100px;
+  opacity: 0;
+  visibility: hidden;
+}
+.card.alt .title {
+  position: relative;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+.card.alt .title .close {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 60px;
+  display: inline;
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: 400;
+}
+.card.alt .title .close:before {
+  content: '\00d7';
+}
+.card.alt .input-container input {
+  color: #ffffff;
+}
+.card.alt .input-container input:focus ~ label {
+  color: #ffffff;
+}
+.card.alt .input-container input:focus ~ .bar:before, .card.alt .input-container input:focus ~ .bar:after {
+  background: #ffffff;
+}
+.card.alt .input-container input:valid ~ label {
+  color: #ffffff;
+}
+.card.alt .input-container label {
+  color: rgba(255, 255, 255, 0.8);
+}
+.card.alt .input-container .bar {
+  background: rgba(255, 255, 255, 0.8);
+}
+.card.alt .ignore-container ignore {
+  width: 100%;
+  background: #ffffff;
+  border-color: #ffffff;
+}
+.card.alt .ignore-container ignore span {
+  color: #37474f;
+}
+.card.alt .ignore-container ignore:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+.card.alt .ignore-container ignore:active:before, .card.alt .ignore-container ignore:focus:before {
+  display: none;
+}
+
+/* Keyframes */
+@-webkit-keyframes ignoreFadeInUp {
+  0% {
+    bottom: 30px;
+    opacity: 0;
+  }
+}
+@keyframes ignoreFadeInUp {
+  0% {
+    bottom: 0px;
+    opacity: 0;
+  }
+}
+
+body{
+  background : #717e86 !important;
+}
