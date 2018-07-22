@@ -6,6 +6,13 @@ $password = "";
 $connect = mysql_connect("localhost", "root", "",);
  $db = mysql_select_db("testing");
 
+ echo "success";
+
+ if(empty!= $POST[$connect] && empty!=$POST[$db])
+ {
+  echo "connected";
+ }
+
 echo "connection established!";
 
 
