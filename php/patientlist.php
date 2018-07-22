@@ -268,9 +268,8 @@ session_start();
                                                     <tbody>
                                                         
                                                         <?php
-                                                        echo "ksgsad";
+                                                        
                                                          $username=$_SESSION['username'];
-                                                         echo $username;
                                                         $link=mysqli_connect("localhost","root","") or die('CONNECTION ERROR');
                                                         mysqli_select_db($link,"vcare") or die('DATABSE NOT SELECTED');
                                                        
