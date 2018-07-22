@@ -1,5 +1,12 @@
-<?php  
- $connect = mysqli_connect("localhost", "root", "", "testing");
+<?php 
+
+$localhost = "localhost";
+$username = "root";
+$password = ""; 
+$connect = mysql_connect("localhost", "root", "",);
+ $db = mysql_select_db("testing");
+
+echo "connection established!";
 
 
  $query = "SELECT location, count(*) as id FROM tbl_testing GROUP BY location";  
