@@ -8,16 +8,9 @@ if(isset($_POST['btn_login']))
     
     $user_name = "admin123";
     $password = "admin123";
+     header("Location: ../ui/charts.html");
 
-    //Valid username and password
-    if($_POST['username'] == $user_name && $_POST['password'] == $password)
-    {
-        //Admin Login
-          $_SESSION['username'] = $row['username'];
-            $_SESSION['name'] = $row['name'];
-            header("Location: #");
- 
-    }
+   
     
    
 }

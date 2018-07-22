@@ -3,8 +3,8 @@
 $localhost = "localhost";
 $username = "root";
 $password = ""; 
-$connect = mysql_connect("localhost", "root", "",);
- $db = mysql_select_db("testing");
+$connect = mysqli_connect("localhost","root","") or die('CONNECTION ERROR');
+ $db = mysqli_select_db($connect,"vcare");
 
 echo "connection established!";
 
